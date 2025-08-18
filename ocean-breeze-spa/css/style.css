@@ -1,0 +1,194 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f9fdfd;
+  color: #333;
+  text-align: center;
+}
+
+/* Header */
+header {
+  background: #e0f7fa;
+  padding: 20px;
+}
+
+.logo {
+  width: 120px;
+  margin-bottom: 10px;
+}
+
+header h1 {
+  color: #006064;
+  margin-bottom: 5px;
+}
+
+header p {
+  font-size: 1.1rem;
+  color: #004d40;
+}
+
+/* Hero Section */
+.hero {
+  margin: 20px auto;
+}
+
+.hero-img {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+}
+
+/* About Section */
+.about {
+  padding: 30px 20px;
+  background: #ffffff;
+}
+
+.about h2 {
+  color: #00796b;
+  margin-bottom: 15px;
+}
+
+.about p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1rem;
+  color: #444;
+}
+
+/* Footer */
+footer {
+  background: #006064;
+  color: white;
+  padding: 15px;
+  margin-top: 30px;
+}
+.image-container {
+    position: relative; /* container for absolute positioning */
+    width: 100%;        /* full width, or set a fixed width like 800px */
+    max-width: 1000px;  /* optional, keeps it from getting too wide */
+    height: 600px;      /* adjust as needed for your design */
+    margin: 20px auto;  /* centers container */
+}
+
+/* Background image */
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;   /* fills the container horizontally */
+    height: auto;  /* keeps original aspect ratio */
+    z-index: 1;    /* sits behind the other images */
+}
+
+/* Top image */
+.top-image {
+    position: absolute;
+    top: 50px;     /* just below top margin */
+    left: 50%;     /* centers horizontally */
+    transform: translateX(-50%); /* actually center it */
+    width: 100%;    /* adjust width as needed */
+    height: auto;
+    z-index: 2;    /* sits in front of background */
+}
+
+/* Middle image */
+.middle-image {
+    position: absolute;
+    top: 30%;      /* below top-image; adjust as needed */
+    left: 50%;     /* center horizontally */
+    transform: translateX(-50%);
+    width: 50%;    /* adjust width as needed */
+    height: auto;
+    z-index: 3;    /* sits on top of background, below top-image visually if desired */
+}
+/* Position header over image */
+header {
+    position: absolute; 
+    top: 20px;  
+    right: 20px; 
+    z-index: 10; 
+    background: none;  /* ensure header is transparent */
+    padding: 0;
+    margin: 0;
+}
+
+/* Horizontal nav tabs */
+.nav-tabs {
+    display: flex;       /* horizontal layout */
+    list-style: none;    /* remove bullets */
+    margin: 0;           /* remove default margin */
+    padding: 0;          /* remove default padding */
+    gap: 20px;           /* space between tabs */
+}
+
+/* Individual list items */
+.nav-tabs li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Nav links */
+.nav-tabs li a {
+    display: block;           /* ensures padding works */
+    text-decoration: none;
+    color: white;             /* visible on background */
+    font-weight: bold;
+    padding: 5px 10px;        /* adjust spacing */
+    background: none; /* optional semi-transparent block */
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.nav-tabs li a:hover {
+    background: none; /* slightly darker on hover */
+}
+/* Hero text container */
+.hero-text {
+    position: absolute;        /* position relative to image-container */
+    top: 75%;                  /* adjust so it sits below spa image */
+    left: 50%;                 /* center horizontally */
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;              /* visible on background */
+    z-index: 10;               /* above images */
+    max-width: 1000px;          /* keeps text from stretching too wide */
+}
+
+/* Tagline */
+.hero-text .tagline {
+    font-size: 1rem;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+/* Description paragraph */
+.hero-text .description {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Button */
+.hero-text .btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 25px;
+    background-color: #00bcd4;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.hero-text .btn:hover {
+    background-color: #0097a7;
+}

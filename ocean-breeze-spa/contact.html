@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Form Medium</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #ffffff;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Background container */
+    .background {
+      width: 960px;
+      height: 682px;
+      background: url("images/contact.jpg") no-repeat center center;
+      background-size: cover;
+      display: flex;
+      justify-content: flex-start; /* push form slightly left */
+      align-items: flex-start;     /* allow form to be positioned down */
+      padding: calc(1.4cm + 1cm) 3.4cm 1.4cm 3.4cm; /* top/right/bottom/left */
+      box-sizing: border-box;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    }
+
+    /* Contact form */
+    .form-container {
+      width: 352px;
+      height: 484px;
+      background: rgba(255,255,255,0.9);
+      padding: 16px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      box-sizing: border-box;
+      font-size: 14px;
+      overflow-y: auto;
+      margin-top: 5%; /* moves form down 5% */
+    }
+
+    h2 {
+      font-size: 16px;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    label {
+      font-size: 13px;
+      margin-top: 8px;
+      display: block;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 6px;
+      font-size: 12px;
+      border: 1px solid #999;
+      border-radius: 4px;
+      margin-bottom: 8px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      height: 70px;
+      resize: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 8px;
+      margin-top: 8px;
+      font-size: 14px;
+      background: #007BFF;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="background">
+    <div class="form-container">
+      <h2>Send us a message</h2>
+      <form>
+        <label>First Name*</label>
+        <input type="text" required>
+
+        <label>Last Name*</label>
+        <input type="text" required>
+
+        <label>Email*</label>
+        <input type="email" required>
+
+        <label>Phone*</label>
+        <input type="tel" required>
+
+        <label>Country*</label>
+        <input type="text" required>
+
+        <label>Message*</label>
+        <textarea required></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
+<!-- 
+References 
+
+Mozilla Developer Network (MDN). (n.d.). HTML: HyperText Markup Language. 
+Available at: https://developer.mozilla.org/en-US/docs/Web/HTML (Accessed: 25 July 2025).
+
+Mozilla Developer Network (MDN). (n.d.). HTML elements reference. 
+Available at: https://developer.mozilla.org/en-US/docs/Web/HTML/Element (Accessed: 25 July 2025).
+
+Mozilla Developer Network (MDN). (n.d.). HTML forms guide. 
+Available at: https://developer.mozilla.org/en-US/docs/Learn/Forms (Accessed: 25 July 2025).
+
+W3Schools. (n.d.). HTML Tutorial. 
+Available at: https://www.w3schools.com/html/ (Accessed: 25 July 2025).
+
+W3Schools. (n.d.). HTML Forms. 
+Available at: https://www.w3schools.com/html/html_forms.asp (Accessed: 25 July 2025).
+
+W3Schools. (n.d.). HTML Semantic Elements. 
+Available at: https://www.w3schools.com/html/html5_semantic_elements.asp (Accessed: 25 July 2025).
+-->
+
+
+

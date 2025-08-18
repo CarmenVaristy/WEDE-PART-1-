@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enquiry Form</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Full page background image, smaller size */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url("images/enquiry.png") no-repeat center center;
+      background-size: 70% auto; /* 60% width, auto height to keep aspect ratio */
+    }
+
+    /* Form container on top of background */
+    .form-container {
+      width: 90%;
+      max-width: 350px;
+      background: rgba(255, 255, 255, 0.85); /* semi-transparent */
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      box-sizing: border-box;
+      text-align: left;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    p {
+      text-align: center;
+      margin-bottom: 15px;
+      color: #444;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin: 10px 0 5px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #999;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: none;
+      height: 80px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      background: #28a745;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #ffffff;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h1>Enquiry</h1>
+    <p>Leave a quick message so that we can contact you</p>
+    <form>
+      <label>Full Name</label>
+      <input type="text" required>
+
+      <label>Phone Number</label>
+      <input type="tel" required>
+
+      <label>Email Address</label>
+      <input type="email" required>
+
+      <label>Message</label>
+      <textarea required></textarea>
+
+      <label>Enquiry Type</label>
+      <input type="text">
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>
+<!-- 
+References  
+
+Mozilla Developer Network (MDN). (n.d.). HTML: HyperText Markup Language. 
+Available at: https://developer.mozilla.org/en-US/docs/Web/HTML (Accessed: 25 July 2025).
+
+Mozilla Developer Network (MDN). (n.d.). HTML elements reference. 
+Available at: https://developer.mozilla.org/en-US/docs/Web/HTML/Element (Accessed: 25 July 2025).
+
+Mozilla Developer Network (MDN). (n.d.). HTML forms guide. 
+Available at: https://developer.mozilla.org/en-US/docs/Learn/Forms (Accessed: 25 July 2025).
+
+W3Schools. (n.d.). HTML Tutorial. 
+Available at: https://www.w3schools.com/html/ (Accessed: 25 July 2025).
+
+W3Schools. (n.d.). HTML Forms. 
+Available at: https://www.w3schools.com/html/html_forms.asp (Accessed: 25 July 2025).
+
+W3Schools. (n.d.). HTML Semantic Elements. 
+Available at: https://www.w3schools.com/html/html5_semantic_elements.asp (Accessed: 25 July 2025).
+-->
+
