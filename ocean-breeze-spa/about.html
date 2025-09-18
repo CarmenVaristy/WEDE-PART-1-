@@ -1,55 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Ocean Breeze Spa</title>
-    <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Ocean Breeze Spa</title>
+  <style>
+    /* =========================
+       GLOBAL RESET & BASE STYLES
+       ========================= */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #ffffff; /* optional background */
-            padding: 0.02cm;         /* smaller padding = bigger image */
-            box-sizing: border-box;
-        }
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #d7f4e2;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      align-items: center;
+      overflow-x: hidden;
+      animation: fadeInBody 1s ease-in forwards;
+      opacity: 0;
+    }
 
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain; /* ensures full image is visible */
-        }
-    </style>
+    @keyframes fadeInBody {
+      to { opacity: 1; }
+    }
+
+    /* =========================
+       BACKGROUND CONTAINER WITH PARALLAX
+       ========================= */
+    .background-container {
+      background: url("images/Backgroundabout.png") no-repeat center top;
+      background-size: cover;
+      background-attachment: fixed; /* Change 1: subtle parallax */
+      width: 100%;
+      max-width: 1200px;
+      min-height: 120vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 120px 20px 60px;
+      border-radius: 12px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35); /* Change 2: deeper shadow for pop */
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    .background-container:hover {
+      transform: scale(1.005);
+    }
+
+    /* =========================
+       HEADER
+       ========================= */
+    .about-header {
+      position: absolute;
+      top: 5%;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(to right, rgba(180, 237, 213, 0.9), rgba(0,121,107,0.6)); /* Change 3: gradient overlay */
+      color: #004d40;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      padding: 18px 0;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+      border-radius: 0;
+      z-index: 10;
+      opacity: 0;
+      animation: fadeInHeader 1s ease forwards;
+    }
+
+    @keyframes fadeInHeader {
+      to { opacity: 1; }
+    }
+
+    /* =========================
+       CONTENT CONTAINER
+       ========================= */
+    .content-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      width: 100%;
+      margin-top: 80px;
+    }
+
+    /* =========================
+       ABOUT US IMAGE BOX
+       ========================= */
+    .box.about-us {
+      max-width: 600px;
+      border-radius: 12px;
+      overflow: hidden;
+      opacity: 0;
+      animation: fadeInBox 1s ease forwards;
+      animation-delay: 0.4s; /* staggered fade */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .box.about-us img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.35); /* Change 4: enhanced shadow */
+      transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+    }
+
+    .box.about-us img:hover {
+      transform: scale(1.03) rotate(-0.5deg);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.45);
+      filter: brightness(1.1); /* subtle bright hover */
+    }
+
+    @keyframes fadeInBox {
+      to { opacity: 1; }
+    }
+
+    /* =========================
+       VIDEO BOX
+       ========================= */
+    .box.video {
+      max-width: 600px;
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 12px;
+      overflow: hidden;
+      opacity: 0;
+      animation: fadeInVideo 1s ease forwards;
+      animation-delay: 0.6s;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .box.video:hover {
+      transform: scale(1.02) rotate(0.2deg);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+    }
+
+    .box.video iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    @keyframes fadeInVideo {
+      to { opacity: 1; }
+    }
+
+    /* =========================
+       BACK BUTTON
+       ========================= */
+    .back-button {
+      width: 100%;
+      max-width: 1200px;
+      margin: 20px auto 40px auto;
+      text-align: right;
+      opacity: 0;
+      animation: fadeInBack 1s ease forwards;
+      animation-delay: 0.8s;
+    }
+
+    .back-button a {
+      text-decoration: none;
+      color: #ffffff;
+      background-color: rgba(0,0,0,0.3);
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-weight: bold;
+      border: 2px solid #ffffff;
+      transition: all 0.3s ease;
+      transform: scale(0.9);
+      display: inline-block;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.5); /* subtle glow */
+    }
+
+    .back-button a:hover {
+      background-color: rgba(255,255,255,0.25);
+      transform: scale(1.05) rotate(-1deg);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.45);
+    }
+
+    @keyframes fadeInBack {
+      to { opacity: 1; }
+    }
+
+    /* =========================
+       FOOTER
+       ========================= */
+    footer {
+      width: 100%;
+      text-align: center;
+      background: linear-gradient(90deg, #00796b, #26a69a); /* gradient footer */
+      color: white;
+      padding: 18px 0;
+      font-size: 14px;
+      margin-top: -2vh;
+      opacity: 0;
+      animation: fadeInFooter 1s ease forwards;
+      animation-delay: 1s;
+      box-shadow: 0 -6px 20px rgba(0,0,0,0.35); /* footer lift effect */
+    }
+
+    @keyframes fadeInFooter {
+      to { opacity: 1; }
+    }
+
+    /* =========================
+       RESPONSIVE DESIGN
+       ========================= */
+    @media (max-width: 768px) {
+      .background-container {
+        min-height: 150vh;
+        padding: 100px 10px 40px;
+      }
+
+      .box.about-us,
+      .box.video {
+        max-width: 90%;
+      }
+
+      .box.about-us img {
+        max-height: 50vh;
+        margin-top: 30px;
+      }
+
+      .back-button {
+        margin: 10px auto 20px auto;
+        padding-right: 10px;
+      }
+
+      footer {
+        font-size: 12px;
+        padding: 12px;
+      }
+
+      .about-header {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <img src="images/about.png" alt="about Image">
+
+  <div class="background-container">
+    <!-- Full-width header over background -->
+    <div class="about-header">About Us</div>
+
+    <div class="content-container">
+      <!-- About Us Image Section -->
+      <div class="box about-us">
+        <img src="images/Aboutus.png" alt="About Us Information">
+      </div>
+
+      <!-- Embedded Video Section -->
+      <div class="box video">
+        <iframe 
+          width="560" 
+          height="315" 
+          src="https://www.youtube.com/embed/pNTTsVHkXYk?si=oJL08ZjFmDn578Di" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="back-button">
+    <a href="index.html">← Back to Home</a>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Ocean Breeze Spa. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
-<!-- 
-References 
 
-Mozilla Developer Network (MDN). (n.d.). HTML: HyperText Markup Language. 
-Available at: https://developer.mozilla.org/en-US/docs/Web/HTML (Accessed: 25 July 2025).
-
-Mozilla Developer Network (MDN). (n.d.). HTML elements reference. 
-Available at: https://developer.mozilla.org/en-US/docs/Web/HTML/Element (Accessed: 25 July 2025).
-
-Mozilla Developer Network (MDN). (n.d.). HTML forms guide. 
-Available at: https://developer.mozilla.org/en-US/docs/Learn/Forms (Accessed: 25 July 2025).
-
-W3Schools. (n.d.). HTML Tutorial. 
-Available at: https://www.w3schools.com/html/ (Accessed: 25 July 2025).
-
-W3Schools. (n.d.). HTML Forms. 
-Available at: https://www.w3schools.com/html/html_forms.asp (Accessed: 25 July 2025).
-
-W3Schools. (n.d.). HTML Semantic Elements. 
-Available at: https://www.w3schools.com/html/html5_semantic_elements.asp (Accessed: 25 July 2025).
+<!--
+==============================
+HARVARD STYLE REFERENCES
+==============================
+Mozilla Developer Network (MDN). (n.d.). CSS Animations. Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations (Accessed: 18 September 2025).
+MDN Web Docs. (n.d.). CSS Transitions. Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/transition (Accessed: 18 September 2025).
+W3Schools. (n.d.). CSS Box Shadow. Available at: https://www.w3schools.com/css/css3_shadows.asp (Accessed: 18 September 2025).
 -->
 

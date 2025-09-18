@@ -1,58 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8"> <!-- Defines UTF-8 character encoding -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive design scaling -->
   <title>Ocean Breeze Spa</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css"> <!-- External CSS for base styles -->
+
+  <style>
+    /* ==============================
+       GLOBAL PAGE ANIMATION
+       ============================== */
+    /* Change 1: Entire page fade-in on load */
+    body {
+      animation: fadeInPage 1s ease-in forwards;
+      opacity: 0; /* Start hidden for fade-in */
+    }
+    @keyframes fadeInPage {
+      to { opacity: 1; }
+    }
+
+    /* ==============================
+       HERO IMAGE & DECORATIVE EFFECTS
+       ============================== */
+    /* Change 2: Hero background hover effect */
+    .background-image {
+      transition: transform 0.8s ease, filter 0.8s ease;
+    }
+    .background-image:hover {
+      transform: scale(1.02); /* Slight zoom effect */
+      filter: brightness(1.05); /* Slight brighten */
+    }
+
+    /* Change 3: Decorative images hover effects */
+    .middle-image, .top-image {
+      transition: transform 0.6s ease, box-shadow 0.6s ease;
+    }
+    .middle-image:hover, .top-image:hover {
+      transform: scale(1.05); /* Slight enlargement */
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4); /* Drop shadow for depth */
+    }
+
+    /* ==============================
+       HERO TEXT ANIMATIONS
+       ============================== */
+    /* Change 4: Fade-in hero text */
+    .hero-text p, .hero-text .btn {
+      opacity: 0;
+      animation: fadeInText 1s forwards;
+    }
+    .hero-text p:nth-child(1) { animation-delay: 0.5s; } /* tagline */
+    .hero-text p:nth-child(2) { animation-delay: 1s; }   /* description */
+    .hero-text .btn { animation-delay: 1.5s; }           /* button */
+
+    @keyframes fadeInText {
+      to { opacity: 1; }
+    }
+
+    /* Change 5: Hero button hover effect */
+    .hero-text .btn {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .hero-text .btn:hover {
+      transform: translateY(-3px); /* Slight lift */
+      box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+    }
+
+    /* ==============================
+       NAVIGATION HOVER EFFECTS
+       ============================== */
+    /* Change 6: Nav links hover effect */
+    .nav-tabs li a {
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+    .nav-tabs li a:hover {
+      color: #004d40; /* Dark green highlight */
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    }
+
+    /* ==============================
+       ABOUT SECTION ANIMATION
+       ============================== */
+    /* Change 7: About heading fade-in */
+    .about h2 {
+      opacity: 0;
+      animation: fadeInAbout 1s ease forwards;
+      animation-delay: 0.5s;
+    }
+    @keyframes fadeInAbout {
+      to { opacity: 1; }
+    }
+
+    /* ==============================
+       FOOTER ANIMATION & EFFECT
+       ============================== */
+    /* Change 8: Footer fade-in + subtle shadow */
+    footer {
+      opacity: 0;
+      animation: fadeInFooter 1s ease forwards;
+      animation-delay: 2s;
+      box-shadow: 0 -4px 15px rgba(0,0,0,0.2);
+    }
+    @keyframes fadeInFooter {
+      to { opacity: 1; }
+    }
+  </style>
 </head>
 <body>
-  <!-- Hero Section -->
+
+  <!-- ==============================
+       HERO SECTION
+       ============================== -->
   <section class="hero">
-     <div class="image-container">
-        <img src="images/background.png" alt="Ocean Breeze Spa" class="background-image">
-        <img src="images/spa.png" class="middle-image">
-        <img src="images/logo-placeholder.png" alt="Image 3" class="top-image">
-        <!-- Navigation -->
-          <header>
-    <nav>
-      <ul class="nav-tabs">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="enquiry.html">Enquiry</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-    <div class="hero-text">
-            <p class="tagline">Relax. Recharge. Reconnect.</p>
-            <p class="description">
-                Ocean Breeze Spa offers calming, personalised treatments designed 
-                to help you unwind and feel your best right here in the heart of Durban.
-            </p>
-            <a href="enquiry.html" class="btn">BOOK</a>
-        </div>
+    <div class="image-container">
+      <img src="images/background.png" alt="Ocean Breeze Spa" class="background-image">
+      <img src="images/spa.png" class="middle-image" alt="Spa Image">
+      <img src="images/logo-placeholder.png" class="top-image" alt="Logo">
+
+      <!-- NAVIGATION -->
+      <header>
+        <nav>
+          <ul class="nav-tabs">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="enquiry.html">Enquiry</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- HERO TEXT -->
+      <div class="hero-text">
+        <p class="tagline">Relax. Recharge. Reconnect.</p>
+        <p class="description">
+          Ocean Breeze Spa offers calming, personalised treatments designed 
+          to help you unwind and feel your best right here in the heart of Durban.
+        </p>
+        <a href="enquiry.html" class="btn">BOOK</a>
+      </div>
     </div>
-</section>
+  </section>
+
+  <!-- ==============================
+       ABOUT SECTION
+       ============================== -->
+  <section class="about">
+    <h2>About Us</h2>
+  </section>
+
+  <!-- ==============================
+       FOOTER
+       ============================== -->
+  <footer>
+    <p>&copy; 2025 Ocean Breeze Spa. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
+
+
 <!-- 
-References 
+==============================
+HARVARD STYLE REFERENCES
+==============================
 
 Mozilla Developer Network (MDN). (n.d.). HTML: HyperText Markup Language. 
 Available at: https://developer.mozilla.org/en-US/docs/Web/HTML (Accessed: 25 July 2025).
 
-Mozilla Developer Network (MDN). (n.d.). HTML elements reference. 
-Available at: https://developer.mozilla.org/en-US/docs/Web/HTML/Element (Accessed: 25 July 2025).
+Mozilla Developer Network (MDN). (n.d.). CSS Animations. 
+Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations (Accessed: 18 September 2025).
 
-Mozilla Developer Network (MDN). (n.d.). HTML forms guide. 
-Available at: https://developer.mozilla.org/en-US/docs/Learn/Forms (Accessed: 25 July 2025).
-
-W3Schools. (n.d.). HTML Tutorial. 
-Available at: https://www.w3schools.com/html/ (Accessed: 25 July 2025).
-
-W3Schools. (n.d.). HTML Forms. 
-Available at: https://www.w3schools.com/html/html_forms.asp (Accessed: 25 July 2025).
+W3Schools. (n.d.). CSS Transitions. 
+Available at: https://www.w3schools.com/css/css3_transitions.asp (Accessed: 18 September 2025).
 
 W3Schools. (n.d.). HTML Semantic Elements. 
 Available at: https://www.w3schools.com/html/html5_semantic_elements.asp (Accessed: 25 July 2025).
+
+MDN Web Docs. (n.d.). Using the :hover pseudo-class. 
+Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/:hover (Accessed: 18 September 2025).
 -->

@@ -1,62 +1,135 @@
-
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Enquiry Form</title>
+
   <style>
+    /* ==============================
+       BASE STYLES
+       ============================== */
     html, body {
       margin: 0;
       padding: 0;
-      height: 100%;
       font-family: Arial, sans-serif;
+      height: 100%;
+      background-color: #d7f4e2;
     }
 
-    /* Full page background image, smaller size */
     body {
+      display: flex; 
+      flex-direction: column;
+      align-items: center;
+      animation: fadeInBody 1s ease-in forwards; /* Change 1: Page fade-in */
+      opacity: 0;
+    }
+
+    @keyframes fadeInBody {
+      to { opacity: 1; }
+    }
+
+    /* ==============================
+       BACKGROUND CONTAINER
+       ============================== */
+    .background-container {
+      position: relative;
+      width: 70%;
+      max-width: 960px;
+      background: url("images/enquiry.png") no-repeat center top;
+      background-size: cover;
+      border-radius: 12px;
+      margin-top: 40px;
+      padding: 40px 20px;
+      box-sizing: border-box;
       display: flex;
       justify-content: center;
-      align-items: center;
-      background: url("images/enquiry.png") no-repeat center center;
-      background-size: 70% auto; /* 60% width, auto height to keep aspect ratio */
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35); /* Change 2: Subtle shadow added */
+      transition: transform 0.5s ease; /* Change 3: hover zoom effect */
     }
 
-    /* Form container on top of background */
+    .background-container:hover {
+      transform: scale(1.01); /* Slight zoom for interactivity */
+    }
+
+    /* ==============================
+       FORM CONTAINER
+       ============================== */
     .form-container {
       width: 90%;
       max-width: 350px;
-      background: rgba(255, 255, 255, 0.85); /* semi-transparent */
+      background: rgba(255, 255, 255, 0.85);
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.3);
       box-sizing: border-box;
       text-align: left;
+      z-index: 1;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeInForm 1s ease forwards; /* Change 4: Form fade-in */
+      opacity: 0;
+    }
+
+    @keyframes fadeInForm {
+      to { opacity: 1; }
+    }
+
+    .form-container:hover {
+      transform: translateY(-2px); /* Change 5: lift effect on hover */
+      box-shadow: 0 6px 14px rgba(0,0,0,0.25);
     }
 
     h1 {
       text-align: center;
       margin-bottom: 10px;
+      color: #00796b;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.2); /* Change 6: subtle text shadow */
+      animation: fadeInTitle 1s ease forwards; /* Title fade-in */
+      opacity: 0;
+      animation-delay: 0.3s;
+    }
+
+    @keyframes fadeInTitle {
+      to { opacity: 1; }
     }
 
     p {
       text-align: center;
       margin-bottom: 15px;
       color: #444;
+      opacity: 0;
+      animation: fadeInSubtitle 1s ease forwards; /* Paragraph fade-in */
+      animation-delay: 0.6s;
     }
 
+    @keyframes fadeInSubtitle {
+      to { opacity: 1; }
+    }
+
+    /* ==============================
+       FORM INPUTS
+       ============================== */
     label {
       display: block;
       font-weight: bold;
       margin: 10px 0 5px;
+      color: #004d40;
     }
 
     input, textarea {
       width: 100%;
       padding: 10px;
-      border: 1px solid #999;
+      border: 1px solid #b2dfdb;
       border-radius: 5px;
       box-sizing: border-box;
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.2s; /* Change 7: smooth hover/focus */
+    }
+
+    input:focus, textarea:focus {
+      border-color: #00796b;
+      box-shadow: 0 0 8px rgba(0,121,107,0.3);
+      transform: scale(1.02); /* Slight scale effect on focus */
+      outline: none;
     }
 
     textarea {
@@ -64,68 +137,162 @@
       height: 80px;
     }
 
+    /* ==============================
+       SUBMIT BUTTON
+       ============================== */
     button {
       width: 100%;
       padding: 12px;
       margin-top: 10px;
-      background: #28a745;
+      background: linear-gradient(135deg, #00796b, #26a69a);
       border: none;
       border-radius: 5px;
       color: white;
       font-size: 16px;
       cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.2s, box-shadow 0.3s; /* Change 8: hover shadow */
     }
 
     button:hover {
-      background: #ffffff;
+      background: linear-gradient(135deg, #004d40, #00796b);
+      transform: scale(1.03); /* Slight enlarge effect */
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    }
+
+    /* ==============================
+       BACK BUTTON
+       ============================== */
+    .back-button {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      animation: fadeInBack 1s ease forwards;
+      opacity: 0;
+      animation-delay: 1.2s;
+    }
+
+    .back-button a {
+      text-decoration: none;
+      color: #ffffff;
+      background-color: rgba(0,0,0,0.3);
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      border: 2px solid #ffffff;
+      transition: background 0.3s, color 0.3s, transform 0.2s, box-shadow 0.3s;
+      transform: scale(0.9);
+    }
+
+    .back-button a:hover {
+      background-color: rgba(255,255,255,0.2);
+      transform: scale(1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* subtle glow effect on hover */
+    }
+
+    @keyframes fadeInBack {
+      to { opacity: 1; }
+    }
+
+    /* ==============================
+       FOOTER
+       ============================== */
+    footer {
+      width: 100%;
+      text-align: center;
+      background-color: #00796b;
+      color: rgb(244, 244, 244);
+      padding: 10px 0;
+      font-size: 14px;
+      margin-top: 20px;
+      animation: fadeInFooter 1s ease forwards;
+      opacity: 0;
+      animation-delay: 1.5s;
+    }
+
+    @keyframes fadeInFooter {
+      to { opacity: 1; }
+    }
+
+    /* ==============================
+       RESPONSIVE DESIGN
+       ============================== */
+    @media (max-width: 768px) {
+      .background-container {
+        width: 90%;
+        padding: 20px;
+      }
+      .form-container {
+        max-width: 90%;
+      }
+      .back-button {
+        bottom: 10px;
+        right: 10px;
+      }
     }
 
   </style>
 </head>
 <body>
-  <div class="form-container">
-    <h1>Enquiry</h1>
-    <p>Leave a quick message so that we can contact you</p>
-    <form>
-      <label>Full Name</label>
-      <input type="text" required>
 
-      <label>Phone Number</label>
-      <input type="tel" required>
+  <div class="background-container">
+    <div class="form-container">
+      <h1>Enquiry</h1>
+      <p>Leave a quick message so that we can contact you</p>
 
-      <label>Email Address</label>
-      <input type="email" required>
+      <!-- Enquiry form -->
+      <form>
+        <label>Full Name</label>
+        <input type="text" required>
 
-      <label>Message</label>
-      <textarea required></textarea>
+        <label>Phone Number</label>
+        <input type="tel" required>
 
-      <label>Enquiry Type</label>
-      <input type="text">
+        <label>Email Address</label>
+        <input type="email" required>
 
-      <button type="submit">Submit</button>
-    </form>
+        <label>Message</label>
+        <textarea required></textarea>
+
+        <label>Enquiry Type</label>
+        <input type="text">
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <!-- BACK BUTTON -->
+    <div class="back-button">
+      <a href="index.html">← Back to Home</a>
+    </div>
   </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Ocean Breeze Spa. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
+
 <!-- 
-References  
+==============================
+HARVARD STYLE REFERENCES
+==============================
 
-Mozilla Developer Network (MDN). (n.d.). HTML: HyperText Markup Language. 
-Available at: https://developer.mozilla.org/en-US/docs/Web/HTML (Accessed: 25 July 2025).
+Mozilla Developer Network (MDN). (n.d.). CSS Animations. 
+Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations (Accessed: 18 September 2025).
 
-Mozilla Developer Network (MDN). (n.d.). HTML elements reference. 
-Available at: https://developer.mozilla.org/en-US/docs/Web/HTML/Element (Accessed: 25 July 2025).
+MDN Web Docs. (n.d.). CSS Transitions. 
+Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/transition (Accessed: 18 September 2025).
 
-Mozilla Developer Network (MDN). (n.d.). HTML forms guide. 
-Available at: https://developer.mozilla.org/en-US/docs/Learn/Forms (Accessed: 25 July 2025).
-
-W3Schools. (n.d.). HTML Tutorial. 
-Available at: https://www.w3schools.com/html/ (Accessed: 25 July 2025).
+W3Schools. (n.d.). CSS Hover Effects. 
+Available at: https://www.w3schools.com/css/css3_buttons.asp (Accessed: 18 September 2025).
 
 W3Schools. (n.d.). HTML Forms. 
 Available at: https://www.w3schools.com/html/html_forms.asp (Accessed: 25 July 2025).
 
-W3Schools. (n.d.). HTML Semantic Elements. 
-Available at: https://www.w3schools.com/html/html5_semantic_elements.asp (Accessed: 25 July 2025).
+W3Schools. (n.d.). CSS Box Shadow. 
+Available at: https://www.w3schools.com/css/css3_shadows.asp (Accessed: 18 September 2025).
 -->
-
