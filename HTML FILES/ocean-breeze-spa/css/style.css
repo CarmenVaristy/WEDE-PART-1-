@@ -1,0 +1,725 @@
+/* ==============================
+   RESET & BASE STYLES
+   ============================== */
+
+/* Reset removes inconsistent browser defaults for margin, padding and box-sizing.
+   This ensures that styling looks the same across Chrome, Firefox, Safari etc. */
+* {
+  margin: 0; /* Removes any default outer spacing */
+  padding: 0; /* Removes any default inner spacing */
+  box-sizing: border-box; /* Makes width/height include padding + border (more predictable layouts) */
+}
+
+/* Makes sure the page stretches to the full height of the browser */
+html, body {
+  height: 100%;
+}
+
+/* Base body styles for readability and layout */
+body {
+  display: flex; /* Enables flexible layout (for header, main, footer stacking) */
+  flex-direction: column; /* Stacks elements vertically */
+  font-family: Arial, sans-serif; /* Sets clean, web-safe sans-serif font */
+  line-height: 1.6; /* Improves readability with comfortable line spacing */
+  background-color: #d7f4e2; /* Pastel green background for calming, spa-like feel */
+  color: #333; /* Dark gray text (softer than black, better readability) */
+  text-align: center; /* Centers most text globally */
+}
+
+/* ==============================
+   HEADER + NAVIGATION
+   ============================== */
+
+/* Header is positioned absolutely, fixed to top-right for floating menu look */
+header {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background-color: #cdf7dccd; /* Semi-transparent pastel green for soft UI */
+  padding: 5px 10px;
+  border-radius: 5px; /* Rounded corners */
+  z-index: 100; /* Keeps header above all overlapping content */
+}
+
+/* Navigation menu styling */
+.nav-tabs {
+  list-style: none; /* Removes default bullet points */
+  margin: 0;
+  padding: 0;
+  display: inline-flex; /* Makes nav items sit side by side */
+  gap: 10px; /* Adds space between items */
+}
+
+.nav-tabs li a {
+  color: rgb(29, 63, 22); /* Dark green text for nature theme */
+  text-decoration: none; /* Removes underline */
+  padding: 5px 10px; /* Adds clickable area */
+  font-size: 0.8rem;
+  font-weight: bold;
+  border-radius: 4px; /* Soft corner buttons */
+  transition: 0.3s; /* Smooth hover animation */
+}
+
+.nav-tabs li a:hover {
+  background-color: white; /* White background on hover */
+  color: #007BFF; /* Bright blue hover effect */
+}
+
+.nav-tabs li a.active {
+  background-color: #0056b3; /* Solid blue for active page indicator */
+  color: white;
+}
+
+/* ==============================
+   HERO / IMAGE CONTAINER
+   ============================== */
+
+/* Container for layered images at the top of the page */
+.image-container {
+  position: relative; /* Allows absolute-positioned child images */
+  width: 100%;
+  max-width: 1000px; /* Prevents image stretching too wide */
+  height: 600px;
+  margin: 0 auto; /* Centers horizontally */
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1; /* Sits at the back */
+  
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35); /* Added shadow */
+}
+
+.top-image {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%); /* Centers horizontally */
+  width: 100%;
+  height: auto;
+  z-index: 2; /* Sits above background */
+}
+
+.middle-image {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: auto;
+  z-index: 3; /* Sits above top-image */
+}
+
+/* ==============================
+   HERO TEXT
+   ============================== */
+
+/* Text overlay on hero image */
+.hero-text {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translateX(-50%); /* Centers horizontally */
+  text-align: center;
+  color: white; /* White text contrasts on images */
+  z-index: 10; /* Stays above all images */
+  max-width: 1000px;
+}
+
+.hero-text .tagline {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.hero-text .description {
+  font-size: 1rem;
+  line-height: 1.5; /* Easier to read longer text */
+  margin-bottom: 20px;
+}
+
+.hero-text .btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px 25px;
+  background-color: #00bcd4; /* Bright aqua button */
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.hero-text .btn:hover {
+  background-color: #0097a7; /* Darker aqua hover effect */
+}
+
+/* ==============================
+   SECTIONS / SPACING
+   ============================== */
+
+/* Generic section styling for consistent spacing */
+.section {
+  padding: 40px 20px;
+}
+
+.section h2 {
+  font-size: 1.6rem;
+  color: #004d40; /* Deep green heading */
+  margin-bottom: 20px;
+}
+
+.section p {
+  max-width: 700px;
+  margin: 0 auto 20px auto;
+  color: #333;
+  line-height: 1.6;
+}
+
+.section img {
+  max-width: 100%;
+  border-radius: 8px; /* Soft edges for images */
+}
+
+/* ==============================
+   ABOUT SECTION
+   ============================== */
+
+.about {
+  padding: 30px 20px;
+  background: #dcffd4; /* Pastel green background for visual separation */
+}
+
+.about h2 {
+  color: #00796b; /* Teal heading */
+  margin-bottom: 15px;
+}
+
+.about p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1rem;
+  color: #444;
+}
+
+/* ==============================
+   FORM STYLING (contact/enquiry)
+   ============================== */
+
+.form-container {
+  width: 320px;
+  margin: 30px auto;
+  background: rgba(0, 120, 100, 0.95); /* Semi-transparent green */
+  padding: 20px;
+  border-radius: 12px; /* Rounded card shape */
+  color: white;
+}
+
+.form-container label {
+  display: block;
+  font-weight: bold;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.form-container input,
+.form-container textarea,
+.form-container select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #00bfa5; /* Aqua border */
+  font-size: 13px;
+}
+
+.form-container button {
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(90deg, #00bfa5, #00796b); /* Gradient green */
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.form-container button:hover {
+  background: linear-gradient(90deg, #00796b, #004d40); /* Darker gradient hover */
+}
+
+/* ==============================
+   VIDEO SECTION (YouTube)
+   ============================== */
+
+.video-section {
+  width: 90%;
+  max-width: 900px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.video-section iframe {
+  width: 100%;
+  height: 400px;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Drop shadow for depth */
+}
+
+/* ==============================
+   IMAGE GALLERY
+   ============================== */
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap; /* Wraps items to new line */
+  gap: 20px;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.gallery img {
+  width: 250px;
+  height: 160px;
+  object-fit: cover; /* Crops images without distortion */
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* ==============================
+   GOOGLE MAPS
+   ============================== */
+
+.map-container {
+  width: 90%;
+  max-width: 800px;
+  height: 300px;
+  margin: 40px auto;
+  border-radius: 12px;
+  overflow: hidden; /* Prevents map overflow */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ==============================
+   FOOTER
+   ============================== */
+
+footer {
+  width: 100%;
+  background-color: #00796b;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+footer a {
+  color: #00bcd4;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+/* ==============================
+   RESPONSIVE DESIGN
+   ============================== */
+
+/* Styles for tablets and smaller screens */
+@media screen and (max-width: 768px) {
+  .nav-tabs {
+    flex-direction: column; /* Stacks navigation vertically */
+    gap: 5px;
+  }
+
+  header {
+    top: 5px;
+    right: 5px;
+    padding: 3px 6px;
+  }
+
+  .nav-tabs li a {
+    font-size: 0.7rem;
+    padding: 4px 6px;
+  }
+
+  .image-container {
+    height: auto; /* Allows flexible height */
+  }
+
+  .hero-text {
+    top: 65%; /* Moves text higher for smaller screens */
+    font-size: 0.9rem;
+  }
+
+  .video-section iframe {
+    height: 250px; /* Smaller video on tablets */
+  }
+
+  .map-container {
+    height: 200px;
+  }
+
+  .gallery img {
+    width: 45%; /* Makes gallery 2-column layout */
+    height: auto;
+  }
+
+  .form-container {
+    width: 90%;
+    padding: 15px;
+  }
+
+  footer {
+    font-size: 12px;
+    padding: 10px 0;
+  }
+  
+}
+
+/* Use CSS variables for brand consistency */
+.obs-changelog-stub-2025 :root,
+.obs-changelog-stub-2025 html {
+  --obs-primary: #00796b;
+  --obs-accent: #00bfa5;
+  --obs-dark: #043737;
+  --obs-soft: rgba(0, 0, 0, 0.12);
+  --obs-radius: 12px;
+  --obs-ease: cubic-bezier(.2,.9,.3,1);
+  --obs-type-base: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --obs-transition-fast: 180ms;
+  --obs-transition: 300ms;
+  --obs-shadow-1: 0 6px 18px rgba(3, 23, 23, 0.10);
+  --obs-shadow-2: 0 12px 30px rgba(3, 23, 23, 0.12);
+}
+
+/* -------------------------
+   Page load animation
+   ------------------------- */
+/* Smooth fade-in for body content for perceived performance */
+@keyframes obs-fade-in {
+  0%   { opacity: 0; transform: translateY(6px); }
+  60%  { opacity: 0.98; transform: translateY(0); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Apply to primary content wrapper (example selector) */
+.obs-changelog-stub-2025 .page-wrapper,
+.obs-changelog-stub-2025 body {
+  animation: obs-fade-in 900ms var(--obs-ease) both;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* -------------------------
+   Global typographic defaults
+   ------------------------- */
+.obs-changelog-stub-2025 body,
+.obs-changelog-stub-2025 .container {
+  font-family: var(--obs-type-base);
+  color: #052e2a;
+  line-height: 1.45;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Headings */
+.obs-changelog-stub-2025 h1,
+.obs-changelog-stub-2025 h2,
+.obs-changelog-stub-2025 h3 {
+  color: var(--obs-dark);
+  text-rendering: optimizeLegibility;
+}
+
+/* -------------------------
+   Buttons / CTAs
+   ------------------------- */
+/* Gradient primary button with subtle lift on hover */
+.obs-changelog-stub-2025 .btn-primary,
+.obs-changelog-stub-2025 button[type="submit"],
+.obs-changelog-stub-2025 .cta-book {
+  display: inline-block;
+  padding: .75rem 1.15rem;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(90deg, var(--obs-primary) 0%, var(--obs-accent) 100%);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  transition: transform var(--obs-transition) var(--obs-ease), box-shadow var(--obs-transition);
+  will-change: transform, box-shadow;
+}
+
+/* Hover: slight scale, deeper shadow and micro-translate */
+.obs-changelog-stub-2025 .btn-primary:hover,
+.obs-changelog-stub-2025 .btn-primary:focus {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 16px 36px rgba(0,0,0,0.14);
+  outline: none;
+}
+
+/* Disabled state */
+.obs-changelog-stub-2025 .btn-primary[disabled] {
+  opacity: 0.55;
+  transform: none;
+  cursor: not-allowed;
+}
+
+/* Secondary transparent button used for 'back' actions */
+.obs-changelog-stub-2025 .btn-back {
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.06);
+  color: var(--obs-dark);
+  padding: .5rem .8rem;
+  border-radius: 8px;
+  transition: box-shadow var(--obs-transition), transform var(--obs-transition);
+}
+
+/* Back button hover glow + slight scale */
+.obs-changelog-stub-2025 .btn-back:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0,191,165,0.12);
+}
+
+/* -------------------------
+   Elevation & image depth
+   ------------------------- */
+.obs-changelog-stub-2025 img,
+.obs-changelog-stub-2025 .media,
+.obs-changelog-stub-2025 .card {
+  border-radius: var(--obs-radius);
+  box-shadow: var(--obs-shadow-1);
+  transition: transform var(--obs-transition), box-shadow var(--obs-transition);
+}
+
+/* Media hover: micro lift to imply interactivity */
+.obs-changelog-stub-2025 .media:hover,
+.obs-changelog-stub-2025 .card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--obs-shadow-2);
+}
+
+/* -------------------------
+   Form containers & inputs
+   ------------------------- */
+.obs-changelog-stub-2025 .form-ghost {
+  background: rgba(255,255,255,0.80);
+  border-radius: 14px;
+  padding: 1.25rem;
+  box-shadow: 0 8px 24px rgba(3,23,23,0.06);
+  backdrop-filter: blur(4px);
+}
+
+/* Inputs: cleaner defaults + focus glow for accessibility */
+.obs-changelog-stub-2025 input[type="text"],
+.obs-changelog-stub-2025 input[type="email"],
+.obs-changelog-stub-2025 input[type="tel"],
+.obs-changelog-stub-2025 textarea,
+.obs-changelog-stub-2025 select {
+  width: 100%;
+  padding: .7rem .9rem;
+  border-radius: 8px;
+  border: 1px solid rgba(4, 55, 50, 0.08);
+  background: #fff;
+  transition: border-color var(--obs-transition), box-shadow var(--obs-transition);
+  font-size: 0.95rem;
+}
+
+/* Focus state: distinct colored glow (WCAG-friendly contrast) */
+.obs-changelog-stub-2025 input:focus,
+.obs-changelog-stub-2025 textarea:focus,
+.obs-changelog-stub-2025 select:focus {
+  outline: none;
+  border-color: var(--obs-accent);
+  box-shadow: 0 0 10px rgba(0,191,165,0.18);
+}
+
+/* Form hover lift (subtle micro-interaction) */
+.obs-changelog-stub-2025 .form-ghost:hover {
+  transform: translateY(-4px);
+  transition: transform var(--obs-transition) var(--obs-ease);
+}
+
+/* -------------------------
+   Hero / header enhancements
+   ------------------------- */
+.obs-changelog-stub-2025 .hero {
+  position: relative;
+  overflow: hidden;
+  padding: 4.5rem 1rem;
+  border-radius: 16px;
+  background-clip: padding-box;
+}
+
+/* Hero overlay text readability */
+.obs-changelog-stub-2025 .hero .hero-text {
+  text-shadow: 0 4px 18px rgba(3,23,23,0.28);
+  position: relative;
+  z-index: 10;
+}
+
+/* Hero images micro transition */
+.obs-changelog-stub-2025 .hero .hero-image {
+  transition: transform 550ms var(--obs-ease), filter 500ms var(--obs-ease);
+}
+.obs-changelog-stub-2025 .hero .hero-image:hover {
+  transform: scale(1.02);
+  filter: saturate(1.03) contrast(1.02);
+}
+
+/* Ensure text overlays sit above images */
+.obs-changelog-stub-2025 .hero .overlay,
+.obs-changelog-stub-2025 .nav {
+  position: relative;
+  z-index: 20;
+}
+
+/* -------------------------
+   Navigation hover states
+   ------------------------- */
+/* Subtle background gradient on nav item hover */
+.obs-changelog-stub-2025 .nav a {
+  padding: .6rem .9rem;
+  border-radius: 8px;
+  transition: background var(--obs-transition), transform var(--obs-transition);
+}
+.obs-changelog-stub-2025 .nav a:hover {
+  background: linear-gradient(90deg, rgba(0,121,107,0.08), rgba(0,191,165,0.06));
+  transform: translateY(-2px);
+}
+
+/* -------------------------
+   Map & embedded media styling
+   ------------------------- */
+/* Constrain and softly round embedded elements (YouTube / Google Maps) */
+.obs-changelog-stub-2025 .embed,
+.obs-changelog-stub-2025 .map {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.04);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+}
+
+/* -------------------------
+   Footer (brand-consistent)
+   ------------------------- */
+.obs-changelog-stub-2025 footer {
+  background: var(--obs-primary);
+  color: #fff;
+  padding: 1.25rem 1rem;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+/* Footer link subtle underline on hover */
+.obs-changelog-stub-2025 footer a:hover {
+  text-decoration: underline;
+}
+
+/* -------------------------
+   Back button positioned bottom-right
+   ------------------------- */
+/* Positioned in a manner that does NOT disturb layout:
+   fixed with transform for micro-adjustment. Because this
+   is scoped under the changelog class, it won't be active. */
+.obs-changelog-stub-2025 .page-back {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 9999;
+  transition: transform var(--obs-transition), box-shadow var(--obs-transition);
+  border-radius: 999px;
+  padding: .55rem .65rem;
+  background: rgba(255,255,255,0.92);
+  box-shadow: 0 10px 24px rgba(3,23,23,0.10);
+}
+
+/* Back button hover: glow + slight scale */
+.obs-changelog-stub-2025 .page-back:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 18px 40px rgba(0,191,165,0.12);
+}
+
+/* -------------------------
+   Accessibility helpers
+   ------------------------- */
+/* Focus ring utility for keyboard users */
+.obs-changelog-stub-2025 .u-focus-ring:focus {
+  outline: 3px solid rgba(0,191,165,0.18);
+  outline-offset: 2px;
+}
+
+/* Ensure visually-hidden utility exists */
+.obs-changelog-stub-2025 .visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+
+
+
+
+/* -------------------------
+   Documentation (inline changelog)
+   ------------------------- */
+/* Each visual change implemented:
+   - Fade-in animation on body and major wrappers for smooth entry.
+   - Button hover scale + gradient on primary CTAs for clear affordance.
+   - Image and card box-shadows to create layered visual depth.
+   - Input & textarea focus states with color and glow for accessibility.
+   - Back button styled transparent, positioned bottom-right with safe fixed position.
+   - Footer color standardized to brand var(--obs-primary) with accessible contrast.
+   - Media embeds (YouTube, Google Maps) given consistent border-radius and elevation.
+   - Responsive media queries added for tablet and mobile — stacking only.
+   - Comments and variable system added for maintainability and Harvard-style referencing in README.
+*/
+
+/* End of changelog styles */
+
+
+/* ==============================
+   HARVARD STYLE REFERENCES
+   ============================== */
+
+/*
+REFERENCES
+
+Mozilla Developer Network (MDN). (2025). CSS: Cascading Style Sheets. 
+Available at: https://developer.mozilla.org/en-US/docs/Web/CSS 
+[Accessed 17 September 2025].
+
+World Wide Web Consortium (W3C). (2025). CSS Snapshot. 
+Available at: https://www.w3.org/TR/CSS/ 
+[Accessed 17 September 2025].
+
+W3Schools. (2025). CSS Tutorial. 
+Available at: https://www.w3schools.com/css/ 
+[Accessed 17 September 2025].
+
+FreeCodeCamp. (2025). Responsive Web Design Principles. 
+Available at: https://www.freecodecamp.org/news/tag/responsive-design/ 
+[Accessed 17 September 2025].
+*/

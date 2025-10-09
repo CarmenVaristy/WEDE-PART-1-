@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- =========================
+       DOCUMENT META
+       ========================= -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Ocean Breeze Spa for enquiries about services, volunteering, or sponsorship.">
+  <meta name="author" content="Carmen Jecole">
+  <meta name="keywords" content="Ocean Breeze Spa, Contact, Enquiry, Spa Services, Massage, Wellness, Facial, Sauna, Hydrotherapy">
+
+  <title>Enquiry Form - Ocean Breeze Spa</title>
+
+  <style>
+    /* =========================
+       BASE STYLES
+       ========================= */
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      height: 100%;
+      background-color: #d7f4e2; /* Spa-themed background */
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeInBody 1s ease-in forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeInBody { to { opacity: 1; } }
+
+    /* =========================
+       NAVIGATION BAR
+       ========================= */
+    nav {
+      width: 100%;
+      background-color: #00796b;
+      padding: 10px 0;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin: 0 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s, transform 0.2s;
+    }
+
+    nav ul li a:hover {
+      color: #a7ffeb;
+      transform: scale(1.1);
+    }
+
+    /* =========================
+       BACKGROUND CONTAINER
+       ========================= */
+    .background-container {
+      position: relative;
+      width: 70%;
+      max-width: 960px;
+      background: url("images/enquiry.png") no-repeat center top;
+      background-size: cover;
+      border-radius: 12px;
+      margin-top: 45px;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+      transition: transform 0.5s ease;
+    }
+
+    .background-container:hover { transform: scale(1.01); }
+
+    /* =========================
+       FORM CONTAINER
+       ========================= */
+    .form-container {
+      width: 100%;
+      max-width: 400px;
+      background: rgba(255,255,255,0.85);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      text-align: left;
+      z-index: 1;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeInForm 1s ease forwards;
+      opacity: 0;
+      margin-top: 10%;
+    }
+
+    @keyframes fadeInForm { to { opacity: 1; } }
+
+    .form-container:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+    }
+
+    /* =========================
+       HEADINGS
+       ========================= */
+    h1 {
+      text-align: center;
+      margin-bottom: 10px;
+      color: #00796b;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+      animation: fadeInTitle 1s ease forwards;
+      opacity: 0;
+      animation-delay: 0.3s;
+    }
+
+    @keyframes fadeInTitle { to { opacity: 1; } }
+
+    p {
+      text-align: center;
+      margin-bottom: 15px;
+      color: #444;
+      opacity: 0;
+      animation: fadeInSubtitle 1s ease forwards;
+      animation-delay: 0.6s;
+    }
+
+    @keyframes fadeInSubtitle { to { opacity: 1; } }
+
+    /* =========================
+       FORM INPUTS
+       ========================= */
+    label {
+      display: block;
+      font-weight: bold;
+      margin: 10px 0 5px;
+      color: #004d40;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #b2dfdb;
+      border-radius: 5px;
+      box-sizing: border-box;
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.2s;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: #00796b;
+      box-shadow: 0 0 8px rgba(0,121,107,0.3);
+      transform: scale(1.02);
+      outline: none;
+    }
+
+    textarea { resize: none; height: 80px; }
+
+    /* =========================
+       SUBMIT BUTTON
+       ========================= */
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      background: linear-gradient(135deg, #00796b, #26a69a);
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #004d40, #00796b);
+      transform: scale(1.03);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    }
+
+    /* =========================
+       BACK BUTTON
+       ========================= */
+    .back-button {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      animation: fadeInBack 1s ease forwards;
+      opacity: 0;
+      animation-delay: 1.2s;
+    }
+
+    .back-button a {
+      text-decoration: none;
+      color: #ffffff;
+      background-color: rgba(0,0,0,0.3);
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      border: 2px solid #ffffff;
+      transition: background 0.3s, color 0.3s, transform 0.2s, box-shadow 0.3s;
+      transform: scale(0.9);
+    }
+
+    .back-button a:hover {
+      background-color: rgba(255,255,255,0.2);
+      transform: scale(1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    @keyframes fadeInBack { to { opacity: 1; } }
+
+    /* =========================
+       FOOTER
+       ========================= */
+    footer {
+      width: 100%;
+      text-align: center;
+      background-color: #00796b;
+      color: white;
+      padding: 10px 0;
+      font-size: 14px;
+      margin-top: 20px;
+      animation: fadeInFooter 1s ease forwards;
+      opacity: 0;
+      animation-delay: 1.5s;
+    }
+
+    @keyframes fadeInFooter { to { opacity: 1; } }
+
+    /* =========================
+       RESPONSIVE DESIGN
+       ========================= */
+    @media (max-width: 768px) {
+      .background-container { width: 90%; padding: 20px; }
+      .form-container { max-width: 90%; }
+      .back-button { bottom: 10px; right: 10px; }
+      nav ul li { margin: 0 10px; }
+    }
+
+    /* =========================
+       ERROR & SUCCESS MESSAGES
+       ========================= */
+    .error-msg {
+      color: red;
+      font-size: 14px;
+      display: none;
+      margin-bottom: 10px;
+    }
+
+    .success-msg {
+      color: green;
+      font-size: 16px;
+      text-align: center;
+      display: none;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- =========================
+       NAVIGATION
+       ========================= -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="enquiry.html">Enquiry</a></li>
+    </ul>
+  </nav>
+
+  <!-- =========================
+       MAIN BACKGROUND & FORM
+       ========================= -->
+  <div class="background-container">
+    <div class="form-container">
+      <h1>Enquiry</h1>
+      <p>Leave a quick message so that we can contact you</p>
+
+      <!-- Success message -->
+      <div class="success-msg" id="success-msg">Your enquiry has been submitted successfully!</div>
+
+      <!-- =========================
+           ENQUIRY FORM
+           ========================= -->
+      <form id="enquiry-form">
+        <label>Full Name</label>
+        <input type="text" required>
+
+        <label>Phone Number</label>
+        <input type="tel" required>
+
+        <label>Email Address</label>
+        <input type="email" required>
+
+        <label>Enquiry Type</label>
+        <input type="text">
+
+        <label>Preferred Contact Date</label>
+        <input type="date" required>
+
+        <label>Country</label>
+        <select required>
+          <option value="">Select your country</option>
+          <option value="South Africa">South Africa</option>
+          <option value="United States">United States</option>
+          <option value="United Kingdom">United Kingdom</option>
+          <option value="Australia">Australia</option>
+          <option value="Canada">Canada</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <label>Message</label>
+        <textarea required></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <!-- BACK BUTTON -->
+    <div class="back-button">
+      <a href="index.html">← Back to Home</a>
+    </div>
+  </div>
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
+  <footer>
+    &copy; 2025 Ocean Breeze Spa. All rights reserved.
+  </footer>
+
+  <!-- =========================
+       JAVASCRIPT VALIDATION
+       ========================= -->
+  <script>
+    const form = document.getElementById('enquiry-form');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Get form values
+      const name = form.querySelector('input[type="text"]').value.trim();
+      const phone = form.querySelector('input[type="tel"]').value.trim();
+      const email = form.querySelector('input[type="email"]').value.trim();
+      const enquiryType = form.querySelectorAll('input[type="text"]')[1].value.trim();
+      const date = form.querySelector('input[type="date"]').value.trim();
+      const country = form.querySelector('select').value;
+      const message = form.querySelector('textarea').value.trim();
+
+      let valid = true;
+
+      const namePattern = /^[A-Za-z\s]+$/;
+      const phonePattern = /^\d{10,15}$/;
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+      // Remove old errors
+      const errors = form.querySelectorAll('.error-msg');
+      errors.forEach(err => err.remove());
+
+      // Validate name
+      if (!namePattern.test(name)) {
+        const error = document.createElement('div');
+        error.className = 'error-msg';
+        error.textContent = 'Please enter a valid name (letters only).';
+        form.querySelector('input[type="text"]').after(error);
+        error.style.display = 'block';
+        valid = false;
+      }
+
+      // Validate phone
+      if (!phonePattern.test(phone)) {
+        const error = document.createElement('div');
+        error.className = 'error-msg';
+        error.textContent = 'Enter a valid phone number (10-15 digits).';
+        form.querySelector('input[type="tel"]').after(error);
+        error.style.display = 'block';
+        valid = false;
+      }
+
+      // Validate email
+      if (!emailPattern.test(email)) {
+        const error = document.createElement('div');
+        error.className = 'error-msg';
+        error.textContent = 'Enter a valid email address.';
+        form.querySelector('input[type="email"]').after(error);
+        error.style.display = 'block';
+        valid = false;
+      }
+
+      // Validate enquiry type
+      if (enquiryType === '') {
+        const error = document.createElement('div');
+        error.className = 'error-msg';
+        error.textContent = 'Please enter an enquiry type.';
+        form.querySelectorAll('input[type="text"]')[1].after(error);
+        error.style.display = 'block';
+        valid = false;
+      }
+
+      // Validate date
+      if (date === '') {
+        const error = document.createElement('div');
+        error.className = 'error-msg';
+        error.textContent = 'Please select a preferred contact date.';
+        form.querySelector('input[type="date"]').after(error);
+        error.style.display = 'block';
+        valid = false;
+      }
+
+      // Validate country
+      if (country === '') {
+        const error = document.createElement('div');
+        error.className = 'error-msg';
+        error.textContent = 'Please select your country.';
+        form.querySelector('select').after(error);
+        error.style.display = 'block';
+        valid = false;
+      }
+
+      // Validate message length
+      if (message.length < 10) {
+        const error = document.createElement('div');
+        error.className = 'error-msg';
+        error.textContent = 'Please enter a message (min 10 characters).';
+        form.querySelector('textarea').after(error);
+        error.style.display = 'block';
+        valid = false;
+      }
+
+      // If valid, show success message
+      if (valid) {
+        const successMsg = document.getElementById('success-msg');
+        successMsg.style.display = 'block';
+        form.reset();
+      }
+    });
+  </script>
+
+</body>
+</html>

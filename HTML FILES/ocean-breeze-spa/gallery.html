@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- 
+    ===================================================
+    HEAD SECTION: META INFORMATION & PAGE SETTINGS
+    ===================================================
+    Contains metadata for browser rendering, SEO optimization, and responsive design.
+  -->
+
+  <!-- Character encoding: ensures proper display of text and symbols -->
+  <meta charset="UTF-8">
+
+  <!-- Viewport settings: responsive design for mobile, tablet, desktop -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO description: summarizes page content for search engines -->
+  <meta name="description" content="Explore the Ocean Breeze Spa gallery showcasing our premium spa services, relaxing treatments, and luxurious environment.">
+
+  <!-- Page author -->
+  <meta name="author" content="Carmen Jecole">
+
+  <!-- SEO keywords -->
+  <meta name="keywords" content="Spa, Massage, Relaxation, Facial, Sauna, Ocean Breeze Spa, Wellness, Gallery, Aromatherapy, Reflexology">
+
+  <!-- Page title -->
+  <title>Ocean Breeze Spa Gallery</title>
+
+  <style>
+    /* =========================
+       BASE STYLES
+       ========================= */
+    html, body {
+      height: 100%; /* Full viewport height */
+      margin: 0; 
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif; /* Clean, readable font */
+      background: #d7f4e2; /* Soft spa green background */
+      display: flex; /* Flex container for vertical alignment */
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh; /* Ensure footer stays at bottom */
+    }
+
+    /* =========================
+       NAVIGATION BAR
+       ========================= */
+    nav {
+      width: 100%;
+      background: linear-gradient(135deg, #00796b, #26a69a); /* Gradient spa colors */
+      display: flex;
+      justify-content: center;
+      padding: 15px 0;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Slight shadow for depth */
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 20px; /* Space between links */
+      transition: color 0.3s, transform 0.2s; /* Smooth hover effects */
+    }
+
+    nav a:hover {
+      color: #004d40; /* Darker green on hover */
+      transform: scale(1.1); /* Slight zoom on hover */
+    }
+
+    /* =========================
+       PAGE HEADER
+       ========================= */
+    header {
+      width: 100%;
+      padding: 20px 0;
+      text-align: center;
+      color: #004d40;
+      font-size: 28px;
+      font-weight: bold;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.2); /* Subtle shadow for readability */
+      margin: 20px 0;
+    }
+
+    /* =========================
+       CAROUSEL CONTAINER
+       ========================= */
+    .carousel-container {
+      width: 90%;
+      max-width: 1200px;
+      position: relative; /* For positioning arrows */
+      overflow: hidden; /* Hide overflowing images */
+      margin-bottom: 50px;
+      border-radius: 12px; /* Rounded corners */
+      flex: 1; /* Allows content to expand and push footer down */
+    }
+
+    .carousel-track {
+      display: flex; /* Horizontal layout for carousel items */
+      transition: transform 0.5s ease; /* Smooth sliding */
+    }
+
+    .carousel-item {
+      min-width: 25%; /* Show 4 images by default */
+      box-sizing: border-box;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .carousel-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover; /* Maintain aspect ratio */
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3); /* Depth */
+      transition: transform 0.3s, box-shadow 0.3s; /* Hover effects */
+    }
+
+    .carousel-item img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    }
+
+    /* IMAGE TITLE BAR */
+    .image-title {
+      margin-top: 8px;
+      font-weight: bold;
+      color: #004d40;
+      background: rgba(255,255,255,0.85);
+      padding: 4px 0;
+      border-radius: 6px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      font-size: 14px;
+    }
+
+    /* =========================
+       NAVIGATION ARROWS
+       ========================= */
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 121, 107, 0.8);
+      color: white;
+      font-size: 28px;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 10;
+      transition: background 0.3s, transform 0.2s;
+      user-select: none; /* Prevent text selection */
+    }
+
+    .arrow:hover {
+      background: #26a69a;
+      transform: scale(1.1);
+    }
+
+    #prev { left: 10px; }
+    #next { right: 10px; }
+
+    /* =========================
+       FOOTER — STAYS AT BOTTOM
+       ========================= */
+    footer {
+      width: 100%;
+      background: #00796b;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 14px;
+      box-shadow: 0 -4px 10px rgba(0,0,0,0.2);
+      margin-top: auto; /* Push footer to bottom */
+    }
+
+    /* =========================
+       RESPONSIVE STYLES
+       ========================= */
+    @media (max-width: 1024px) { .carousel-item { min-width: 33.33%; } }
+    @media (max-width: 768px)  { .carousel-item { min-width: 50%; } }
+    @media (max-width: 480px)  { .carousel-item { min-width: 100%; } }
+  </style>
+</head>
+
+<body>
+  <!-- =========================
+       NAVIGATION BAR
+       ========================= -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- =========================
+       PAGE HEADER
+       ========================= -->
+  <header>Ocean Breeze Spa Gallery</header>
+
+  <!-- =========================
+       IMAGE CAROUSEL
+       ========================= -->
+  <div class="carousel-container">
+    <div class="carousel-track" id="carousel-track">
+      <!-- Each carousel-item contains an image and a title -->
+      <div class="carousel-item">
+        <img src="images/spa1.png" alt="Relaxing Massage">
+        <div class="image-title">Relaxing Massage</div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/spa2.png" alt="Facial Therapy">
+        <div class="image-title">Facial Therapy</div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/spa3.png" alt="Aromatherapy">
+        <div class="image-title">Aromatherapy</div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/spa4.png" alt="Hot Stone Massage">
+        <div class="image-title">Hot Stone Massage</div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/spa5.png" alt="Body Scrub">
+        <div class="image-title">Body Scrub</div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/spa6.png" alt="Sauna Session">
+        <div class="image-title">Sauna Session</div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/spa7.png" alt="Hydrotherapy">
+        <div class="image-title">Hydrotherapy</div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/spa8.png" alt="Manicure & Pedicure">
+        <div class="image-title">Manicure & Pedicure</div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/spa9.png" alt="Herbal Wrap">
+        <div class="image-title">Herbal Wrap</div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/spa10.png" alt="Facial Mask">
+        <div class="image-title">Facial Mask</div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/spa11.png" alt="Massage Therapy">
+        <div class="image-title">Massage Therapy</div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/spa12.png" alt="Relaxing Music Room">
+        <div class="image-title">Relaxing Music Room</div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/spa13.png" alt="Meditation Space">
+        <div class="image-title">Meditation Space</div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/spa14.png" alt="Steam Bath">
+        <div class="image-title">Steam Bath</div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/spa15.png" alt="Facial Treatments">
+        <div class="image-title">Facial Treatments</div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/spa16.png" alt="Couples Massage">
+        <div class="image-title">Couples Massage</div>
+      </div>
+    </div>
+
+    <!-- Navigation Arrows -->
+    <span class="arrow" id="prev">←</span>
+    <span class="arrow" id="next">→</span>
+  </div>
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
+  <footer>
+    &copy; 2025 Ocean Breeze Spa. All rights reserved.
+  </footer>
+
+  <!-- =========================
+       JAVASCRIPT CAROUSEL FUNCTIONALITY
+       ========================= -->
+  <script>
+    const track = document.getElementById('carousel-track');
+    const prev = document.getElementById('prev');
+    const next = document.getElementById('next');
+    const totalItems = track.children.length;
+    const visibleItems = 4; // Default number of visible images
+    let index = 0; // Current starting index
+
+    // Update carousel position
+    function updateCarousel() {
+      const itemWidth = track.children[0].getBoundingClientRect().width;
+      track.style.transform = `translateX(-${index * itemWidth}px)`;
+    }
+
+    // Next button click
+    next.addEventListener('click', () => {
+      if (index < totalItems - visibleItems) index++;
+      else index = 0; // Loop back to start
+      updateCarousel();
+    });
+
+    // Previous button click
+    prev.addEventListener('click', () => {
+      if (index > 0) index--;
+      else index = totalItems - visibleItems; // Loop to end
+      updateCarousel();
+    });
+
+    // Update carousel on window resize for responsiveness
+    window.addEventListener('resize', updateCarousel);
+  </script>
+
+</body>
+</html>

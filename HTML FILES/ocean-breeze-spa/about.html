@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- =========================
+       META TAGS FOR SEO & RESPONSIVENESS
+  ========================= -->
+  <meta charset="UTF-8"> <!-- Universal character encoding -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive scaling -->
+  <meta name="description" content="Learn more about Ocean Breeze Spa, our philosophy, team, and premium spa services for relaxation and wellness.">
+  <meta name="keywords" content="Ocean Breeze Spa, About Us, Wellness, Spa Services, Massage, Relaxation, Facials, Sauna, Hydrotherapy">
+  <meta name="author" content="Carmen Jecole">
+  <meta name="robots" content="index, follow"> <!-- Search engine indexing -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>About Us - Ocean Breeze Spa</title>
+
+  <style>
+    /* ============================================================
+       GLOBAL RESET
+       Remove default browser styles and standardize box sizing
+    ============================================================ */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* ============================================================
+       BODY STYLES
+       Sets background, font, flex layout, and fade-in animation
+    ============================================================ */
+    body {
+      font-family: 'Arial', sans-serif; /* Clean, readable font */
+      background-color: #d7f4e2; /* Soft spa green background */
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      align-items: center;
+      overflow-x: hidden; /* Prevent horizontal scroll */
+      opacity: 0; /* Initial invisible for animation */
+      animation: fadeInBody 1s ease-in forwards;
+    }
+
+    @keyframes fadeInBody { to { opacity: 1; } }
+
+    /* ============================================================
+       NAVIGATION BAR
+       Fixed at top with gradient, centered links, and hover effects
+    ============================================================ */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      padding: 15px 0;
+      background: linear-gradient(to right, rgba(180,237,213,0.9), rgba(0,121,107,0.8));
+    }
+
+    nav ul {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #004d40;
+      font-weight: bold;
+      font-size: 1rem;
+      padding: 8px 15px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background: rgba(255,255,255,0.15);
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    }
+
+    nav ul li a.active { background: rgba(0,121,107,0.2); }
+
+    /* ============================================================
+       BACKGROUND CONTAINER
+       Holds the main page content with parallax effect and hover scale
+    ============================================================ */
+    .background-container {
+      background: url("images/Backgroundabout.png") no-repeat center top;
+      background-size: cover;
+      background-attachment: fixed; /* Parallax effect */
+      width: 100%;
+      max-width: 1200px;
+      min-height: 120vh; /* Extend beyond viewport for scroll */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 140px 20px 60px;
+      border-radius: 12px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    .background-container:hover { transform: scale(1.005); }
+
+    /* ============================================================
+       ABOUT HEADER
+       Floating overlay header with gradient background and fade-in
+    ============================================================ */
+    .about-header {
+      position: absolute;
+      top: 10%;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(to right, rgba(180,237,213,0.9), rgba(0,121,107,0.6));
+      color: #004d40;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      padding: 18px 0;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+      z-index: 10;
+      opacity: 0;
+      animation: fadeInHeader 1s ease forwards;
+    }
+
+    @keyframes fadeInHeader { to { opacity: 1; } }
+
+    /* ============================================================
+       CONTENT CONTAINER
+       Holds image and video sections with spacing
+    ============================================================ */
+    .content-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      width: 100%;
+      margin-top: 80px; /* Push below header */
+    }
+
+    /* ============================================================
+       IMAGE BOX
+       Includes hover scale, rotation, shadow, and fade-in
+    ============================================================ */
+    .box.about-us {
+      max-width: 600px;
+      border-radius: 12px;
+      overflow: hidden;
+      opacity: 0;
+      animation: fadeInBox 1s ease forwards;
+      animation-delay: 0.4s;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .box.about-us img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+      transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+      cursor: pointer;
+    }
+
+    .box.about-us img:hover {
+      transform: scale(1.03) rotate(-0.5deg);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.45);
+      filter: brightness(1.1);
+    }
+
+    @keyframes fadeInBox { to { opacity: 1; } }
+
+    /* ============================================================
+       VIDEO BOX
+       Maintains 16:9 aspect ratio, hover effects, fade-in
+    ============================================================ */
+    .box.video {
+      max-width: 600px;
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 12px;
+      overflow: hidden;
+      opacity: 0;
+      animation: fadeInVideo 1s ease forwards;
+      animation-delay: 0.6s;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .box.video:hover { transform: scale(1.02) rotate(0.2deg); box-shadow: 0 12px 30px rgba(0,0,0,0.4); }
+    .box.video iframe { width: 100%; height: 100%; border: 0; }
+
+    @keyframes fadeInVideo { to { opacity: 1; } }
+
+    /* ============================================================
+       BACK BUTTON
+       Allows users to return to homepage with hover animation
+    ============================================================ */
+    .back-button {
+      width: 100%;
+      max-width: 1200px;
+      margin: 20px auto 40px auto;
+      text-align: right;
+      opacity: 0;
+      animation: fadeInBack 1s ease forwards;
+      animation-delay: 0.8s;
+    }
+
+    .back-button a {
+      text-decoration: none;
+      color: #ffffff;
+      background-color: rgba(0,0,0,0.3);
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-weight: bold;
+      border: 2px solid #ffffff;
+      transition: all 0.3s ease;
+      transform: scale(0.9);
+      display: inline-block;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    }
+
+    .back-button a:hover { background-color: rgba(255,255,255,0.25); transform: scale(1.05) rotate(-1deg); box-shadow: 0 12px 25px rgba(0,0,0,0.45); }
+    @keyframes fadeInBack { to { opacity: 1; } }
+
+    /* ============================================================
+       FOOTER
+       Gradient footer with fade-in animation
+    ============================================================ */
+    footer {
+      width: 100%;
+      text-align: center;
+      background: linear-gradient(90deg, #00796b, #26a69a);
+      color: white;
+      padding: 18px 0;
+      font-size: 14px;
+      margin-top: -2vh;
+      opacity: 0;
+      animation: fadeInFooter 1s ease forwards;
+      animation-delay: 1s;
+      box-shadow: 0 -6px 20px rgba(0,0,0,0.35);
+    }
+    @keyframes fadeInFooter { to { opacity: 1; } }
+
+    /* ============================================================
+       MODAL POPUP
+       Overlay and box for additional messages
+    ============================================================ */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+      animation: fadeInOverlay 0.4s ease;
+    }
+    @keyframes fadeInOverlay { from { opacity: 0; } to { opacity: 1; } }
+
+    .modal-box {
+      background: #e0f7fa;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+      animation: popUp 0.4s ease;
+    }
+    @keyframes popUp { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+    .modal-box h2 { color: #004d40; margin-bottom: 10px; }
+    .modal-box p { color: #00695c; font-size: 1rem; margin-bottom: 20px; }
+    .close-btn { background: #00796b; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; transition: background 0.3s ease; }
+    .close-btn:hover { background: #004d40; }
+
+    /* ============================================================
+       RESPONSIVE DESIGN
+       Adjusts container sizes, font, and spacing for mobile devices
+    ============================================================ */
+    @media (max-width: 768px) {
+      .background-container { min-height: 150vh; padding: 120px 10px 40px; }
+      .box.about-us, .box.video { max-width: 90%; }
+      .box.about-us img { max-height: 50vh; margin-top: 30px; }
+      .back-button { margin: 10px auto 20px auto; padding-right: 10px; }
+      footer { font-size: 12px; padding: 12px; }
+      .about-header { font-size: 1.5rem; }
+      nav ul { gap: 15px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION BAR -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- BACKGROUND CONTAINER -->
+  <div class="background-container">
+
+    <!-- HEADER OVERLAY -->
+    <div class="about-header">About Us</div>
+
+    <!-- CONTENT CONTAINER -->
+    <div class="content-container">
+      <!-- IMAGE BOX -->
+      <div class="box about-us">
+        <img src="images/Aboutus.png" alt="About Us Information">
+      </div>
+
+      <!-- VIDEO BOX -->
+      <div class="box video">
+        <iframe 
+          width="560" 
+          height="315" 
+          src="https://www.youtube.com/embed/pNTTsVHkXYk?si=oJL08ZjFmDn578Di" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- BACK BUTTON -->
+  <div class="back-button">
+    <a href="index.html">← Back to Home</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Ocean Breeze Spa. All rights reserved.</p>
+  </footer>
+
+  <!-- MODAL POPUP -->
+  <div class="modal-overlay" id="relaxationModal">
+    <div class="modal-box">
+      <h2>Relax & Rejuvenate 🌿</h2>
+      <p>Take time to unwind and restore your balance. Book your personalized spa session today!</p>
+      <button class="close-btn" id="closeModal">Close</button>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT FOR MODAL INTERACTIONS -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const modal = document.getElementById("relaxationModal");
+      const closeBtn = document.getElementById("closeModal");
+      const aboutImage = document.querySelector(".box.about-us img");
+      const videoBox = document.querySelector(".box.video iframe");
+
+      // Show modal when clicking image or video
+      function openModal() { modal.style.display = "flex"; }
+      // Hide modal
+      function closeModal() { modal.style.display = "none"; }
+
+      aboutImage.addEventListener("click", openModal);
+      videoBox.addEventListener("click", openModal);
+      closeBtn.addEventListener("click", closeModal);
+      modal.addEventListener("click", function(e) { if (e.target === modal) closeModal(); });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,421 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <!-- ============================================================
+       META TAGS
+       ============================================================ -->
+  <meta charset="UTF-8"> <!-- Character encoding for proper text rendering -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive for all devices -->
+  <meta name="description" content="Contact Ocean Breeze Spa to submit a general message, enquiry, or feedback. Our team will respond promptly."> <!-- Page description for SEO -->
+  <meta name="keywords" content="Ocean Breeze Spa, contact, enquiry, spa services, wellness, booking"> <!-- Keywords for SEO -->
+  <meta name="author" content="Carmen Jecole"> <!-- Page author -->
+  <meta name="robots" content="index, follow"> <!-- Search engine instructions -->
+  
+  <title>Contact Form - Ocean Breeze Spa</title>
+
+  <!-- ============================================================
+       CSS STYLES
+       ============================================================ -->
+  <style>
+    /* ============================================================
+       BASE STYLES
+       Sets font, background, and basic layout
+       ============================================================ */
+    html, body { 
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background: #d7f4e2; /* Soft spa green background */
+    }
+
+    body { 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeInBody 1s ease-in forwards;
+      opacity: 0; /* Starts invisible for fade-in animation */
+    }
+
+    @keyframes fadeInBody { to { opacity: 1; } }
+
+    /* ============================================================
+       NAVIGATION BAR
+       Fixed at top with gradient background and hover effects
+       ============================================================ */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background: linear-gradient(to right, rgba(180,237,213,0.9), rgba(0,121,107,0.8));
+      box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      padding: 15px 0;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #004d40;
+      font-weight: bold;
+      font-size: 1rem;
+      padding: 8px 15px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background: rgba(255,255,255,0.15);
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    }
+
+    nav ul li a.active {
+      background: rgba(0,121,107,0.2);
+    }
+
+    /* ============================================================
+       BACKGROUND CONTAINER
+       Holds the form and optional maps
+       ============================================================ */
+    .background {
+      width: 1024px; /* made bigger */
+      min-height: 650px; /* taller */
+      background: url("images/contact.jpg") no-repeat center center;
+      background-size: cover;
+      display: flex; 
+      justify-content: flex-start; 
+      align-items: flex-start;
+      padding: calc(1.4cm + 1cm) 3.4cm 1.4cm 3.4cm;
+      box-sizing: border-box;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+      position: relative;
+      margin-top: 120px; /* move background a bit lower below fixed nav */
+      transition: transform 0.4s ease;
+    }
+    .background:hover { transform: scale(1.01); }
+
+    /* ============================================================
+       FORM CONTAINER
+       Styles the contact form with shadow, hover, and fade-in
+       ============================================================ */
+    .form-container {
+      width: 320px;
+      background: rgba(255,255,255,0.95);
+      padding: 16px; 
+      border-radius: 16px; 
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      font-size: 14px;
+      overflow-y: auto;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeInForm 1s ease forwards;
+      opacity: 0;
+      margin-top: 40px; /* move form slightly lower inside background */
+    }
+    .form-container:hover { 
+      transform: translateY(-2px); 
+      box-shadow: 0 6px 12px rgba(0,0,0,0.25); 
+    }
+
+    @keyframes fadeInForm { to { opacity: 1; } }
+
+    h2 { 
+      font-size: 14px; 
+      text-align: center; 
+      margin-bottom: -4px; 
+      color: #00796b; 
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.2); 
+      animation: fadeInTitle 1s ease forwards; 
+      opacity: 0; 
+    }
+    @keyframes fadeInTitle { to { opacity: 1; } }
+
+    label { 
+      font-size: 12px; 
+      margin-top: 6px; 
+      display: block; 
+      color: #004d40; 
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 6px; 
+      font-size: 12px;
+      border: 1px solid #b2dfdb;
+      border-radius: 3px;
+      margin-bottom: 2px; 
+      box-sizing: border-box;
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.2s;
+    }
+    input:focus, textarea:focus, select:focus { 
+      border-color: #00796b; 
+      box-shadow: 0 0 8px rgba(0,121,107,0.3); 
+      transform: scale(1.02); 
+      outline: none; 
+    }
+    textarea { height: 56px; resize: none; }
+
+    button {
+      width: 100%; 
+      padding: 6px; 
+      margin-top: 6px; 
+      font-size: 14px;
+      background: linear-gradient(135deg,#00796b,#26a69a);
+      border: none; 
+      border-radius: 4px; 
+      color: white; 
+      font-weight: bold; 
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    }
+    button:hover { 
+      background: linear-gradient(135deg,#004d40,#00796b); 
+      transform: scale(1.03); 
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3); 
+    }
+
+    /* ============================================================
+       MAPS CONTAINER
+       Small embedded maps with hover effect
+       ============================================================ */
+    .maps-container {
+      display: flex; 
+      flex-direction: column; 
+      gap: 10px;
+      position: absolute; 
+      bottom: 50px; 
+      right: 120px; 
+      animation: fadeInMaps 1s ease forwards; 
+      opacity: 0; 
+      animation-delay: 1s;
+    }
+    .maps-container iframe { 
+      width: 2.5cm; 
+      height: 2.5cm; 
+      border: 0; 
+      border-radius: 5px; 
+      transition: transform 0.3s; 
+    }
+    .maps-container iframe:hover { transform: scale(1.05); }
+    @keyframes fadeInMaps { to { opacity: 1; } }
+
+    /* ============================================================
+       BACK BUTTON
+       Returns user to homepage with fade-in
+       ============================================================ */
+    .back-button { 
+      position: absolute; 
+      bottom: -15px; 
+      right: 0px; 
+      z-index: 100; 
+      animation: fadeInBack 1s ease forwards; 
+      opacity: 0; 
+      animation-delay: 1.3s; 
+    }
+    .back-button a { 
+      text-decoration: none; 
+      color: #ffffff; 
+      background-color: rgba(0,0,0,0.3); 
+      padding: 10px 20px; 
+      border-radius: 8px; 
+      font-weight: bold; 
+      border: 2px solid #ffffff; 
+      transition: background 0.3s, color 0.3s, transform 0.2s, box-shadow 0.3s; 
+      transform: scale(0.9); 
+    }
+    .back-button a:hover { 
+      background-color: rgba(255,255,255,0.2); 
+      transform: scale(1); 
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3); 
+    }
+    @keyframes fadeInBack { to { opacity: 1; } }
+
+    /* ============================================================
+       FOOTER
+       Simple spa-themed gradient footer
+       ============================================================ */
+    footer { 
+      width: 100%; 
+      text-align: center; 
+      background-color: #00796b; 
+      color: white; 
+      padding: 10px 0; 
+      font-size: 14px; 
+      margin-top: 40px; 
+      animation: fadeInFooter 1s ease forwards; 
+      opacity: 0; 
+      animation-delay: 1.5s; 
+    }
+    @keyframes fadeInFooter { to { opacity: 1; } }
+
+    /* ============================================================
+       RESPONSIVE DESIGN
+       Adjust layout for smaller devices
+       ============================================================ */
+    @media (max-width:768px) {
+      .background { width: 95%; padding: 2rem; }
+      .form-container { width: 90%; padding: 16px; margin-top: 30px; }
+      .maps-container { bottom: 60px; right: 10px; }
+      .maps-container iframe { width: 2.5cm; height: 2.5cm; }
+      .back-button { bottom: 10px; right: 10px; }
+      footer { font-size: 12px; padding: 8px 0; }
+      nav ul { gap: 15px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============================================================
+       NAVIGATION BAR
+       ============================================================ -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ============================================================
+       BACKGROUND CONTAINER
+       ============================================================ -->
+  <div class="background">
+
+    <!-- ============================================================
+         CONTACT FORM
+         ============================================================ -->
+    <div class="form-container">
+      <h2>Send us a message</h2>
+      <form id="contactForm">
+        <!-- Basic Input Fields -->
+        <label>First Name*</label>
+        <input type="text" id="firstName" required>
+
+        <label>Last Name*</label>
+        <input type="text" id="lastName" required>
+
+        <label>Email*</label>
+        <input type="email" id="email" required>
+
+        <label>Phone*</label>
+        <input type="tel" id="phone" required pattern="[0-9]{10}" placeholder="e.g., 0123456789">
+
+        <!-- Country Dropdown -->
+        <label>Country*</label>
+        <select id="country" required>
+          <option value="">-- Select Country --</option>
+          <option value="South Africa">South Africa</option>
+          <option value="Namibia">Namibia</option>
+          <option value="Botswana">Botswana</option>
+          <option value="Zimbabwe">Zimbabwe</option>
+          <option value="Zambia">Zambia</option>
+          <option value="Mozambique">Mozambique</option>
+          <option value="Lesotho">Lesotho</option>
+          <option value="Eswatini">Eswatini</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <!-- Date Picker -->
+        <label>Preferred Date*</label>
+        <input type="date" id="date" required>
+
+        <label>Message*</label>
+        <textarea id="message" required></textarea>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit</button>
+        <div id="formMessage" style="margin-top:10px;color:#00796b;font-weight:bold;"></div>
+      </form>
+    </div>
+
+    <!-- ============================================================
+         MAPS CONTAINER
+         ============================================================ -->
+    <div class="maps-container">
+      <iframe src="https://www.google.com/maps/embed?..."></iframe>
+      <iframe src="https://www.google.com/maps/embed?..."></iframe>
+    </div>
+
+    <!-- ============================================================
+         BACK BUTTON
+         ============================================================ -->
+    <div class="back-button">
+      <a href="index.html">← Back to Home</a>
+    </div>
+
+  </div>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer>
+    &copy; 2025 Ocean Breeze Spa. All rights reserved.
+  </footer>
+
+  <!-- ============================================================
+       JAVASCRIPT FORM HANDLING
+       ============================================================ -->
+  <script>
+    const contactForm = document.getElementById('contactForm');
+    const formMessage = document.getElementById('formMessage');
+
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevent default page refresh
+
+      // Gather form data
+      const formData = {
+        firstName: document.getElementById('firstName').value.trim(),
+        lastName: document.getElementById('lastName').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        phone: document.getElementById('phone').value.trim(),
+        country: document.getElementById('country').value.trim(),
+        date: document.getElementById('date').value.trim(),
+        message: document.getElementById('message').value.trim()
+      };
+
+      // Simple validation
+      let errors = [];
+      if(formData.firstName.length < 2) errors.push("First name must be at least 2 characters.");
+      if(formData.lastName.length < 2) errors.push("Last name must be at least 2 characters.");
+      if(!/^\S+@\S+\.\S+$/.test(formData.email)) errors.push("Invalid email.");
+      if(!/^\d{10}$/.test(formData.phone)) errors.push("Phone must be 10 digits.");
+      if(formData.country === "") errors.push("Please select your country.");
+      if(!formData.date) errors.push("Please select a date.");
+      if(formData.message.length < 5) errors.push("Message must be at least 5 characters.");
+
+      // Display errors or success message
+      if(errors.length > 0) {
+        formMessage.style.color = "red";
+        formMessage.textContent = errors.join(" | ");
+        return;
+      }
+
+      // Simulate successful submission
+      formMessage.style.color = "#00796b";
+      formMessage.textContent = `Thank you ${formData.firstName}! Your message has been submitted successfully.`;
+      alert(`Thank you ${formData.firstName}! Your message has been submitted successfully.`);
+      contactForm.reset();
+    });
+  </script>
+
+</body>
+</html>

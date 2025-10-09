@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- 
+    ==============================================
+    HEAD SECTION - META INFORMATION & PAGE SETTINGS
+    ==============================================
+    Provides metadata for browsers, SEO, and device scaling.
+  -->
+
+  <!-- Character encoding: UTF-8 supports all standard characters, symbols, and emojis -->
+  <meta charset="UTF-8"> <!-- Ensures correct display of text, special characters, and symbols -->
+
+  <!-- Viewport settings: Ensures responsive design across devices (mobile, tablet, desktop) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Page keywords: improves SEO by describing main topics of the webpage -->
+  <meta name="keywords" content="Ocean Breeze Spa, Spa Durban, Massage, Relaxation, Wellness, Facial, Beauty Treatments, Spa Packages">
+
+  <!-- Page author: Credits the webpage creator or designer -->
+  <meta name="author" content="Carmen Jecole">
+
+  <!-- Page description: Summarizes the page content for search engines and social sharing -->
+  <meta name="description" content="Ocean Breeze Spa in Durban offers personalized wellness treatments including massages, facials, and spa packages to help you relax and rejuvenate.">
+
+  <!-- Page title: Appears in browser tab and search engine results -->
+  <title>Ocean Breeze Spa</title>
+
+  <!-- External CSS: Connects to the external stylesheet for design and layout -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* ==============================
+       GLOBAL PAGE ANIMATION
+       ============================== */
+    /* Change 1: Entire page fade-in on load */
+    body {
+      animation: fadeInPage 1s ease-in forwards;
+      opacity: 0; /* Start hidden for fade-in */
+    }
+    @keyframes fadeInPage {
+      to { opacity: 1; }
+    }
+
+    /* ==============================
+       HERO IMAGE & DECORATIVE EFFECTS
+       ============================== */
+    /* Change 2: Hero background hover effect */
+    .background-image {
+      transition: transform 0.8s ease, filter 0.8s ease;
+    }
+    .background-image:hover {
+      transform: scale(1.02); /* Slight zoom effect */
+      filter: brightness(1.05); /* Slight brighten */
+    }
+
+    /* Change 3: Decorative images hover effects */
+    .middle-image, .top-image {
+      transition: transform 0.6s ease, box-shadow 0.6s ease;
+    }
+    .middle-image:hover, .top-image:hover {
+      transform: scale(1.05); /* Slight enlargement */
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4); /* Drop shadow for depth */
+    }
+
+    /* ==============================
+       HERO TEXT ANIMATIONS
+       ============================== */
+    /* Change 4: Fade-in hero text */
+    .hero-text p, .hero-text .btn {
+      opacity: 0;
+      animation: fadeInText 1s forwards;
+    }
+    .hero-text p:nth-child(1) { animation-delay: 0.5s; } /* tagline */
+    .hero-text p:nth-child(2) { animation-delay: 1s; }   /* description */
+    .hero-text .btn { animation-delay: 1.5s; }           /* button */
+
+    @keyframes fadeInText {
+      to { opacity: 1; }
+    }
+
+    /* Change 5: Hero button hover effect */
+    .hero-text .btn {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .hero-text .btn:hover {
+      transform: translateY(-3px); /* Slight lift */
+      box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+    }
+
+    /* ==============================
+       NAVIGATION HOVER EFFECTS
+       ============================== */
+    /* Change 6: Nav links hover effect */
+    .nav-tabs li a {
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+    .nav-tabs li a:hover {
+      color: #004d40; /* Dark green highlight */
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    }
+
+    /* ==============================
+       ABOUT SECTION ANIMATION
+       ============================== */
+    /* Change 7: About heading fade-in */
+    .about h2 {
+      opacity: 0;
+      animation: fadeInAbout 1s ease forwards;
+      animation-delay: 0.5s;
+    }
+    @keyframes fadeInAbout {
+      to { opacity: 1; }
+    }
+
+    /* ==============================
+       FOOTER ANIMATION & EFFECT
+       ============================== */
+    /* Change 8: Footer fade-in + subtle shadow */
+    footer {
+      opacity: 0;
+      animation: fadeInFooter 1s ease forwards;
+      animation-delay: 2s;
+      box-shadow: 0 -4px 15px rgba(0,0,0,0.2);
+    }
+    @keyframes fadeInFooter {
+      to { opacity: 1; }
+    }
+
+    /* ==============================
+       BOOK YOUR RELAXATION POPUP BOX
+       ============================== */
+    /* Added JavaScript feature: Popup message styling */
+    #popup-box {
+      display: none; /* Hidden by default */
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #004d40;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+      font-weight: bold;
+      animation: fadeInPopup 0.8s ease;
+      z-index: 9999;
+    }
+
+    @keyframes fadeInPopup {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==============================
+       HERO SECTION
+       ============================== -->
+  <section class="hero">
+    <div class="image-container">
+      <img src="images/background.png" alt="Ocean Breeze Spa" class="background-image">
+      <img src="images/spa.png" class="middle-image" alt="Spa Image">
+      <img src="images/logo-placeholder.png" class="top-image" alt="Logo">
+
+      <!-- NAVIGATION -->
+      <header>
+        <nav>
+          <ul class="nav-tabs">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="enquiry.html">Enquiry</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- HERO TEXT -->
+      <div class="hero-text">
+        <p class="tagline">Relax. Recharge. Reconnect.</p>
+        <p class="description">
+          Ocean Breeze Spa offers calming, personalised treatments designed 
+          to help you unwind and feel your best right here in the heart of Durban.
+        </p>
+        <a href="enquiry.html" class="btn">BOOK</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       ABOUT SECTION
+       ============================== -->
+  <section class="about">
+    <h2>About Us</h2>
+  </section>
+
+  <!-- ==============================
+       BOOK RELAXATION POPUP MESSAGE
+       ============================== -->
+  <div id="popup-box">💆 Book your relaxation today!</div>
+
+  <!-- ==============================
+       FOOTER
+       ============================== -->
+  <footer>
+    <p>&copy; 2025 Ocean Breeze Spa. All rights reserved.</p>
+  </footer>
+
+  <!-- ==============================
+       JAVASCRIPT FUNCTIONALITY
+       ============================== -->
+  <script>
+    /* This JavaScript controls the automatic popup box that appears after 4 seconds */
+    window.addEventListener('load', () => {
+      const popup = document.getElementById('popup-box');
+
+      // Delay popup appearance by 4 seconds
+      setTimeout(() => {
+        popup.style.display = 'block';
+
+        // Hide popup after 6 seconds
+        setTimeout(() => {
+          popup.style.display = 'none';
+        }, 6000);
+      }, 4000);
+    });
+  </script>
+
+</body>
+</html>

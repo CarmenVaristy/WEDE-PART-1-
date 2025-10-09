@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- 
+    ===================================================
+    HEAD SECTION: META INFORMATION & PAGE SETTINGS
+    ===================================================
+    Contains metadata for browser, SEO, and responsive design.
+  -->
+
+  <!-- Character encoding: UTF-8 supports all standard characters, symbols, and emojis -->
+  <meta charset="UTF-8"> <!-- Ensures correct display of text, special characters, and symbols -->
+
+  <!-- Viewport settings: Ensures responsive design across devices (mobile, tablet, desktop) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Page keywords: improves SEO by describing main topics of the webpage -->
+  <meta name="keywords" content="Ocean Breeze Spa, Spa Services, Massage, Facial, Aromatherapy, Reflexology, Spa Packages, Wellness, Beauty Treatments, Durban">
+
+  <!-- Page author: Credits the webpage creator or designer -->
+  <meta name="author" content="Carmen Jecole">
+
+  <!-- Page description: Summarizes the page content for search engines and social sharing -->
+  <meta name="description" content="Ocean Breeze Spa offers premium spa services including massage, facial, aromatherapy, reflexology, and luxury spa packages in Durban. Relax, rejuvenate, and recharge with our personalized treatments.">
+
+  <!-- Page title: Appears in browser tab and search engine results -->
+  <title>Premium Services - Ocean Breeze Spa</title>
+
+  <style>
+    /* =========================
+       BASE STYLES
+       ========================= */
+    html, body {
+      margin: 0; /* Remove default margin */
+      padding: 0; /* Remove default padding */
+      font-family: 'Segoe UI', Arial, sans-serif; /* Modern, readable font */
+      background: linear-gradient(to bottom, #d7f4e2, #c1ecd7); /* Calming spa gradient */
+      color: #004d40; /* Spa-inspired green text */
+      overflow-x: hidden; /* Prevent horizontal scroll */
+    }
+
+    /* =========================
+       NAVIGATION BAR
+       ========================= */
+    nav {
+      width: 100%;
+      background-color: #00796b; /* Dark spa green background */
+      padding: 12px 0; /* Vertical spacing */
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* Subtle shadow for depth */
+      position: sticky; /* Stays on top when scrolling */
+      top: 0; 
+      z-index: 1000; /* Keeps nav above other elements */
+      animation: fadeInNav 1s ease forwards; /* Fade-in animation */
+      opacity: 0; /* Start hidden for animation */
+    }
+
+    @keyframes fadeInNav { to { opacity: 1; } }
+
+    nav ul {
+      list-style: none; /* Remove default bullets */
+      display: flex; /* Horizontal menu */
+      justify-content: center; /* Center items */
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin: 0 20px; /* Space between menu items */
+    }
+
+    nav ul li a {
+      color: white; /* Link color */
+      text-decoration: none; /* Remove underline */
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s, transform 0.2s; /* Smooth hover effect */
+    }
+
+    nav ul li a:hover {
+      color: #a7ffeb; /* Lighter green on hover */
+      transform: scale(1.1); /* Slight enlargement */
+    }
+
+    /* =========================
+       MAIN HEADING
+       ========================= */
+    h1 {
+      text-align: center; /* Center heading */
+      color: #00796b; /* Dark green heading */
+      margin-top: 40px;
+      font-size: 2.2rem;
+      animation: fadeSlideDown 1s ease forwards; /* Fade + slide animation */
+      opacity: 0; /* Hidden initially */
+    }
+
+    @keyframes fadeSlideDown {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* =========================
+       SERVICES GRID
+       ========================= */
+    .services {
+      max-width: 1200px; /* Limit width */
+      margin: 50px auto 70px auto; /* Center grid with spacing */
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive columns */
+      gap: 25px; /* Space between cards */
+      padding: 0 15px; /* Horizontal padding */
+    }
+
+    .service-card {
+      background: linear-gradient(145deg, #ffffff, #e0f2f1); /* Soft card gradient */
+      border-radius: 20px; /* Rounded corners */
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Subtle depth */
+      padding: 25px;
+      cursor: pointer; /* Indicates clickable */
+      text-align: center;
+      transform: translateY(20px); /* Start slightly below for animation */
+      opacity: 0; /* Hidden initially */
+      transition: transform 0.4s ease, box-shadow 0.3s ease, background 0.3s; /* Smooth hover effects */
+    }
+
+    .service-card.show {
+      animation: fadeSlideUp 0.8s forwards; /* Fade + slide animation on load */
+    }
+
+    @keyframes fadeSlideUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px) scale(1.03); /* Lift and scale */
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.3); /* Deeper shadow */
+      background: linear-gradient(145deg, #f1f9f8, #d7f4e2); /* Slightly lighter */
+    }
+
+    .service-card img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover; /* Ensure image fits */
+      margin-bottom: 20px;
+      border-radius: 50%; /* Circular images */
+      transition: transform 0.3s ease; /* Hover scale */
+    }
+
+    .service-card:hover img {
+      transform: scale(1.1);
+    }
+
+    .service-card h3 {
+      color: #00796b;
+      margin-bottom: 12px;
+      font-size: 1.2rem;
+    }
+
+    .service-card p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #004d40;
+    }
+
+    /* =========================
+       MODAL STYLES
+       ========================= */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.8); /* Overlay */
+      justify-content: center;
+      align-items: center;
+      z-index: 1000; /* Above content */
+      opacity: 0; /* For transition */
+      transition: opacity 0.3s ease;
+    }
+
+    .modal.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .modal-content {
+      background: #ffffff;
+      padding: 35px;
+      border-radius: 20px;
+      max-width: 500px;
+      text-align: center;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+      transform: scale(0.8);
+      transition: transform 0.3s ease;
+    }
+
+    .modal.active .modal-content {
+      transform: scale(1);
+    }
+
+    .modal-content h3 {
+      color: #00796b;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+
+    .modal-content p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #004d40;
+    }
+
+    .close-btn {
+      margin-top: 25px;
+      padding: 12px 28px;
+      border: none;
+      background: linear-gradient(135deg, #00796b, #26a69a);
+      color: white;
+      font-weight: bold;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.3s;
+    }
+
+    .close-btn:hover {
+      background: linear-gradient(135deg, #26a69a, #00796b);
+      transform: translateY(-3px) scale(1.05);
+    }
+
+    /* =========================
+       BACK BUTTON
+       ========================= */
+    .back-button {
+      text-align: center;
+      margin-bottom: 50px;
+      animation: fadeSlideUp 1s forwards;
+    }
+
+    .back-button a {
+      text-decoration: none;
+      color: white;
+      background: linear-gradient(135deg, #00796b, #26a69a);
+      padding: 14px 30px;
+      border-radius: 25px;
+      font-weight: bold;
+      border: none;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+      transition: transform 0.2s, background 0.3s, box-shadow 0.3s;
+      display: inline-block;
+    }
+
+    .back-button a:hover {
+      background: linear-gradient(135deg, #26a69a, #00796b);
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.35);
+    }
+
+    /* =========================
+       FOOTER
+       ========================= */
+    footer {
+      width: 100%;
+      background: linear-gradient(to right, #00796b, #004d40);
+      color: white;
+      text-align: center;
+      padding: 14px 0;
+      font-size: 0.9rem;
+      box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    footer p {
+      margin: 0;
+      letter-spacing: 1px;
+    }
+
+    /* =========================
+       RESPONSIVE DESIGN
+       ========================= */
+    @media (max-width: 768px) {
+      h1 { font-size: 1.8rem; }
+      .service-card img { width: 80px; height: 80px; }
+      .service-card { padding: 20px; }
+      .back-button a { padding: 12px 25px; font-size: 0.85rem; }
+      footer { font-size: 0.8rem; }
+      nav ul li { margin: 0 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================
+       NAVIGATION
+       ========================= -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="enquiry.html">Enquiry</a></li>
+    </ul>
+  </nav>
+
+  <!-- MAIN HEADING -->
+  <h1>Our Premium Services</h1>
+
+  <!-- =========================
+       SERVICES GRID
+       ========================= -->
+  <section class="services">
+    <!-- Each card contains image, title, and short description -->
+    <div class="service-card" data-service="massage">
+      <img src="images/PIC5.png" alt="Swedish Massage">
+      <h3>Swedish Massage</h3>
+      <p>Relax your body and mind with a full-body massage to reduce tension.</p>
+    </div>
+    <div class="service-card" data-service="facial">
+      <img src="images/PIC4.png" alt="Hydrating Facial">
+      <h3>Hydrating Facial</h3>
+      <p>Deep-cleansing and moisturizing facial that restores your natural glow.</p>
+    </div>
+    <div class="service-card" data-service="manicure">
+      <img src="images/MANI.png" alt="Luxury Manicure">
+      <h3>Luxury Manicure</h3>
+      <p>Revitalize your hands with exfoliation, nail shaping, and a soothing hand massage.</p>
+    </div>
+    <div class="service-card" data-service="aromatherapy">
+      <img src="images/PIC1.png" alt="Aromatherapy">
+      <h3>Aromatherapy</h3>
+      <p>Healing essential oils for full-body relaxation and mood balance.</p>
+    </div>
+    <div class="service-card" data-service="bodywrap">
+      <img src="images/PIC3.png" alt="Detox Body Wrap">
+      <h3>Detox Body Wrap</h3>
+      <p>Refresh your skin and body with a detoxifying wrap using natural extracts.</p>
+    </div>
+    <div class="service-card" data-service="reflexology">
+      <img src="images/PIC7.png" alt="Reflexology">
+      <h3>Reflexology</h3>
+      <p>Stimulate pressure points on your feet to promote overall wellness and balance energy.</p>
+    </div>
+    <div class="service-card" data-service="luxuryspa">
+      <img src="images/PIC8.png" alt="Luxury Spa Package">
+      <h3>Luxury Spa Package</h3>
+      <p>Experience our ultimate spa package combining massage, facial, and aromatherapy in one session.</p>
+    </div>
+    <div class="service-card" data-service="hotstone">
+      <img src="images/PIC6.png" alt="Hot Stone Therapy">
+      <h3>Hot Stone Therapy</h3>
+      <p>Release tension and improve circulation using warm stones in targeted therapy.</p>
+    </div>
+  </section>
+
+  <!-- BACK BUTTON -->
+  <div class="back-button">
+    <a href="index.html">← Back to Home</a>
+  </div>
+
+  <!-- MODAL -->
+  <div class="modal" id="serviceModal">
+    <div class="modal-content">
+      <h3 id="modalTitle"></h3>
+      <p id="modalText"></p>
+      <button class="close-btn" id="closeModal">Close</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Ocean Breeze Spa. All rights reserved.</p>
+  </footer>
+
+  <!-- =========================
+       JAVASCRIPT FUNCTIONALITY
+       ========================= -->
+  <script>
+    // =========================
+    // SERVICE MODAL FUNCTIONALITY
+    // =========================
+
+    // Object containing service descriptions for modal
+    const serviceDetails = {
+      massage: { title: "Swedish Massage", description: "Our Swedish massage reduces stress, improves circulation, and restores muscle balance." },
+      facial: { title: "Hydrating Facial", description: "The Hydrating Facial nourishes your skin, leaving it radiant and rejuvenated." },
+      manicure: { title: "Luxury Manicure", description: "Enjoy a Luxury Manicure with exfoliation, cuticle care, and a relaxing hand massage." },
+      aromatherapy: { title: "Aromatherapy", description: "Our Aromatherapy treatment uses essential oils to enhance mood and promote healing." },
+      bodywrap: { title: "Detox Body Wrap", description: "The Detox Body Wrap refreshes your skin and body using natural, nutrient-rich extracts." },
+      hotstone: { title: "Hot Stone Therapy", description: "Hot Stone Therapy targets deep muscle tension, relieves stress, and boosts circulation." },
+      reflexology: { title: "Reflexology", description: "Reflexology stimulates pressure points on your feet to promote overall wellness and energy balance." },
+      luxuryspa: { title: "Luxury Spa Package", description: "Experience our ultimate spa package combining massage, facial, and aromatherapy in one session." }
+    };
+
+    // Select DOM elements
+    const cards = document.querySelectorAll('.service-card');
+    const modal = document.getElementById('serviceModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalText = document.getElementById('modalText');
+    const closeModal = document.getElementById('closeModal');
+
+    // Animate service cards on page load with staggered delay
+    window.addEventListener('load', () => {
+      cards.forEach((card, index) => {
+        setTimeout(() => card.classList.add('show'), index * 150); // Staggered animation
+      });
+    });
+
+    // Open modal when clicking a card
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        const key = card.getAttribute('data-service'); // Get service type
+        modalTitle.textContent = serviceDetails[key].title; // Set modal title
+        modalText.textContent = serviceDetails[key].description; // Set modal description
+        modal.classList.add('active'); // Show modal
+      });
+    });
+
+    // Close modal on button click
+    closeModal.addEventListener('click', () => modal.classList.remove('active'));
+
+    // Close modal by clicking outside content
+    window.addEventListener('click', e => {
+      if(e.target === modal) modal.classList.remove('active');
+    });
+  </script>
+
+</body>
+</html>
