@@ -330,6 +330,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // This is a  function to simulate selecting a country.
 
 
+
 function handleCountryChange() {
     const countrySelect = document.getElementById('country'); // Get the country dropdown
     countrySelect.addEventListener('change', function() {
