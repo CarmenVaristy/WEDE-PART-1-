@@ -1,3 +1,202 @@
+PART3 
+PART 3 - Ocean Breeze Spa App – Master Changelog
+
+Project: Ocean Breeze Spa Web & Mobile Interface
+Author: Carmen Jecole
+Start Date: 06 Oct 2025
+Current Version: 1.7 (Oct 2025)
+
+Version 1.0 – Initial Setup
+
+Date: 06 Oct 2025
+Pages/Features: Contact / Enquiry Form
+Changes:
+
+Created base HTML structure for enquiry form page.
+
+Added background container with spa-themed image and styling.
+
+Built form container with inputs: Full Name, Phone Number, Email, Enquiry Type, Message.
+
+Added submit button with gradient style and hover effect.
+
+Implemented basic responsive design for mobile screens.
+
+Added footer with spa branding and color theme.
+
+Added extensive comments explaining HTML, CSS, and page structure.
+
+Version 1.1 – Form Validation & Animations
+
+Date: 06–07 Oct 2025
+Pages/Features: Contact / Enquiry Form
+Changes:
+
+Added client-side validation for:
+
+Name (letters only)
+
+Phone (10–15 digits)
+
+Email (valid format)
+
+Message (min 10 characters)
+
+Enquiry type (mandatory)
+
+Added success and error messages dynamically displayed under inputs.
+
+Added fade-in animations for page load, form, heading, and messages.
+
+Added hover effects on input fields and submit button.
+
+Made form smaller by 20% and moved down 5% from top for better layout.
+
+Ensured form remains readable on mobile devices.
+
+Version 1.2 – Premium Services Page Setup
+
+Date: 08 Oct 2025
+Pages/Features: Premium Services Page
+Changes:
+
+Added page heading with fade-slide-down animation.
+
+Created services grid with 8 service cards.
+
+Each card contains:
+
+Image
+
+Title
+
+Short description
+
+Added card animations: fade-slide-up on page load with staggered delay.
+
+Added hover effects: card lift, shadow, image zoom, gradient change.
+
+Added back-to-home button with gradient hover effect.
+
+Added footer consistent with Contact page.
+
+Added comments for HTML & CSS structure.
+
+Version 1.3 – Service Modal Integration
+
+Date: 08 Oct 2025
+Pages/Features: Premium Services Page
+Changes:
+
+Created modal pop-up for each service card.
+
+Modal shows:
+
+Service title
+
+Full description
+
+Close button
+
+Modal includes smooth pop-in animation.
+
+Can close modal by:
+
+Clicking the close button
+
+Clicking outside modal content
+
+Added JS event listeners for card clicks and modal behavior.
+
+Added comments to JS explaining functionality.
+
+Version 1.4 – Gallery Image Popups
+
+Date: 08 Oct 2025
+Pages/Features: Gallery Section
+Changes:
+
+Added clickable images that open a full-size overlay popup.
+
+Smooth fade-in overlay background with shadowed image.
+
+Added close functionality on overlay click.
+
+Ensured responsive scaling for all screen sizes.
+
+Added comments explaining JS implementation.
+
+Version 1.5 – Interactive Features & Scroll-to-Top
+
+Date: 08 Oct 2025
+Pages/Features: All pages
+Changes:
+
+Added fade-in animation for homepage header.
+
+Added scroll-to-top button:
+
+Appears after scrolling 200px
+
+Smooth scroll to top on click
+
+Styled with gradient and hover effects
+
+Added console logs for available services (debug/demo).
+
+Added detailed comments for all JS.
+
+Version 1.6 – Final UI/UX & Contact Form AJAX
+
+Date: 08–09 Oct 2025
+Pages/Features: Contact Form, All pages
+Changes:
+
+Unified color palette: #00796b, #26a69a, #004d40.
+
+Enhanced animations for smoother user experience (fade, hover, pop-ins).
+
+Ensured responsive design across Contact, Services, and Gallery pages.
+
+Added AJAX form submission for Contact Form:
+
+JSON-based POST request
+
+Client-side validation for name, email, phone, country, and message
+
+Inline success/error messages
+
+Form reset after submission
+
+Adjusted spacing, card sizes, form alignment for polished layout.
+
+Ensured accessibility and UX:
+
+Clear labels on forms
+
+Hover effects on buttons and cards
+
+Added back-to-home buttons and interactive maps section.
+
+Version 1.7 – Background & Form Enhancements
+
+Date: 09 Oct 2025
+Pages/Features: Contact Form Page
+Changes:
+
+Increased background container size (width and height) for more visual space.
+
+Moved form slightly lower inside the background for better vertical alignment.
+
+Preserved all existing animations, hover effects, and responsive styles.
+
+Maintained extensive comments throughout HTML, CSS, and JS for clarity.
+
+Adjusted form padding, font sizes, and spacing proportionally for improved layout.
+
+Minor adjustments to maps and back button positioning to fit larger background.
+
+
 
 PART TWO -
 Ocean Breeze Spa 
