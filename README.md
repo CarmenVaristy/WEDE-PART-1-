@@ -25,7 +25,8 @@ This is a professional, responsive, and visually consistent website for Ocean Br
    - Service cards with fade-in and hover effects.
    - Clean layout highlighting spa offerings.
 
-     <img width="1919" height="842" alt="image" src="https://github.com/user-attachments/assets/8339b2e2-43ad-4c3e-8a8d-50a61c75b201" />
+<img width="1908" height="713" alt="image" src="https://github.com/user-attachments/assets/60f2e260-5eac-4001-baa8-9a8ac5ca9267" />
+
 
 4. **Gallery (gallery.html)**
    - Image grid with hover zoom.
