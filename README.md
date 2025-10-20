@@ -24,6 +24,7 @@ This is a professional, responsive, and visually consistent website for Ocean Br
 3. **Services (services.html)**
    - Service cards with fade-in and hover effects.
    - Clean layout highlighting spa offerings.
+   - Search bar
 
 <img width="1908" height="713" alt="image" src="https://github.com/user-attachments/assets/60f2e260-5eac-4001-baa8-9a8ac5ca9267" />
 
