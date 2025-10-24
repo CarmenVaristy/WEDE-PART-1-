@@ -254,24 +254,6 @@
       .back-button { bottom: 10px; right: 10px; }
       nav ul li { margin: 0 10px; }
     }
-
-    /* =========================
-       ERROR & SUCCESS MESSAGES
-       ========================= */
-    .error-msg {
-      color: red;
-      font-size: 14px;
-      display: none;
-      margin-bottom: 10px;
-    }
-
-    .success-msg {
-      color: green;
-      font-size: 16px;
-      text-align: center;
-      display: none;
-      margin-bottom: 10px;
-    }
   </style>
 </head>
 
@@ -281,12 +263,12 @@
        ========================= -->
   <nav>
     <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="enquiry.html">Enquiry</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="contact.html">Contact</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="enquiry.html">Enquiry</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
@@ -298,30 +280,27 @@
       <h1>Enquiry</h1>
       <p>Leave a quick message so that we can contact you</p>
 
-      <!-- Success message -->
-      <div class="success-msg" id="success-msg">Your enquiry has been submitted successfully!</div>
-
       <!-- =========================
            ENQUIRY FORM
            ========================= -->
       <form id="enquiry-form">
         <label>Full Name</label>
-        <input type="text" required>
+        <input type="text" name="name" required>
 
         <label>Phone Number</label>
-        <input type="tel" required>
+        <input type="tel" name="phone" required>
 
         <label>Email Address</label>
-        <input type="email" required>
+        <input type="email" name="email" required>
 
         <label>Enquiry Type</label>
-        <input type="text">
+        <input type="text" name="enquiryType">
 
         <label>Preferred Contact Date</label>
-        <input type="date" required>
+        <input type="date" name="date" required>
 
         <label>Country</label>
-        <select required>
+        <select name="country" required>
           <option value="">Select your country</option>
           <option value="South Africa">South Africa</option>
           <option value="United States">United States</option>
@@ -332,7 +311,7 @@
         </select>
 
         <label>Message</label>
-        <textarea required></textarea>
+        <textarea name="message" required></textarea>
 
         <button type="submit">Submit</button>
       </form>
@@ -352,109 +331,53 @@
   </footer>
 
   <!-- =========================
-       JAVASCRIPT VALIDATION
+       JAVASCRIPT FOR EMAIL PROCESS
        ========================= -->
   <script>
     const form = document.getElementById('enquiry-form');
 
     form.addEventListener('submit', function(e) {
-      e.preventDefault();
+      e.preventDefault(); // Prevent default form submission
 
-      // Get form values
-      const name = form.querySelector('input[type="text"]').value.trim();
-      const phone = form.querySelector('input[type="tel"]').value.trim();
-      const email = form.querySelector('input[type="email"]').value.trim();
-      const enquiryType = form.querySelectorAll('input[type="text"]')[1].value.trim();
-      const date = form.querySelector('input[type="date"]').value.trim();
-      const country = form.querySelector('select').value;
-      const message = form.querySelector('textarea').value.trim();
+      // =========================
+      // GET FORM VALUES
+      // =========================
+      const name = form.querySelector('input[name="name"]').value.trim();
+      const phone = form.querySelector('input[name="phone"]').value.trim();
+      const email = form.querySelector('input[name="email"]').value.trim();
+      const enquiryType = form.querySelector('input[name="enquiryType"]').value.trim();
+      const date = form.querySelector('input[name="date"]').value.trim();
+      const country = form.querySelector('select[name="country"]').value;
+      const message = form.querySelector('textarea[name="message"]').value.trim();
 
-      let valid = true;
+      // =========================
+      // EMAIL CONTENT PREPARATION
+      // Proper line breaks for Gmail/Outlook
+      // =========================
+      const subject = encodeURIComponent(`Enquiry from ${name}`);
+      const body = encodeURIComponent(
+        `Full Name: ${name}\n` +
+        `Phone: ${phone}\n` +
+        `Email: ${email}\n` +
+        `Enquiry Type: ${enquiryType}\n` +
+        `Preferred Contact Date: ${date}\n` +
+        `Country: ${country}\n` +
+        `Message:\n${message}`
+      ).replace(/%0A/g, '%0D%0A'); // Ensure proper CRLF line breaks for email clients
 
-      const namePattern = /^[A-Za-z\s]+$/;
-      const phonePattern = /^\d{10,15}$/;
-      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      // =========================
+      // OPEN DEFAULT EMAIL CLIENT
+      // =========================
+      const mailtoLink = `mailto:info@oceanbreezespa.com?subject=${subject}&body=${body}`;
+      window.location.href = mailtoLink;
 
-      // Remove old errors
-      const errors = form.querySelectorAll('.error-msg');
-      errors.forEach(err => err.remove());
+      // =========================
+      // OPTIONAL: SHOW CONFIRMATION (IN PAGE)
+      // =========================
+      alert("Your email client should now open to send your enquiry. Thank you!");
 
-      // Validate name
-      if (!namePattern.test(name)) {
-        const error = document.createElement('div');
-        error.className = 'error-msg';
-        error.textContent = 'Please enter a valid name (letters only).';
-        form.querySelector('input[type="text"]').after(error);
-        error.style.display = 'block';
-        valid = false;
-      }
-
-      // Validate phone
-      if (!phonePattern.test(phone)) {
-        const error = document.createElement('div');
-        error.className = 'error-msg';
-        error.textContent = 'Enter a valid phone number (10-15 digits).';
-        form.querySelector('input[type="tel"]').after(error);
-        error.style.display = 'block';
-        valid = false;
-      }
-
-      // Validate email
-      if (!emailPattern.test(email)) {
-        const error = document.createElement('div');
-        error.className = 'error-msg';
-        error.textContent = 'Enter a valid email address.';
-        form.querySelector('input[type="email"]').after(error);
-        error.style.display = 'block';
-        valid = false;
-      }
-
-      // Validate enquiry type
-      if (enquiryType === '') {
-        const error = document.createElement('div');
-        error.className = 'error-msg';
-        error.textContent = 'Please enter an enquiry type.';
-        form.querySelectorAll('input[type="text"]')[1].after(error);
-        error.style.display = 'block';
-        valid = false;
-      }
-
-      // Validate date
-      if (date === '') {
-        const error = document.createElement('div');
-        error.className = 'error-msg';
-        error.textContent = 'Please select a preferred contact date.';
-        form.querySelector('input[type="date"]').after(error);
-        error.style.display = 'block';
-        valid = false;
-      }
-
-      // Validate country
-      if (country === '') {
-        const error = document.createElement('div');
-        error.className = 'error-msg';
-        error.textContent = 'Please select your country.';
-        form.querySelector('select').after(error);
-        error.style.display = 'block';
-        valid = false;
-      }
-
-      // Validate message length
-      if (message.length < 10) {
-        const error = document.createElement('div');
-        error.className = 'error-msg';
-        error.textContent = 'Please enter a message (min 10 characters).';
-        form.querySelector('textarea').after(error);
-        error.style.display = 'block';
-        valid = false;
-      }
-
-      // If valid, show success message
-      if (valid) {
-        const successMsg = document.getElementById('success-msg');
-        successMsg.style.display = 'block';
-        form.reset();
-      }
+      // RESET FORM
+      form.reset();
     });
   </script>
 

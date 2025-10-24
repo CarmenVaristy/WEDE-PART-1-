@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <!-- ============================================================
@@ -92,8 +92,8 @@
        Holds the form and optional maps
        ============================================================ */
     .background {
-      width: 1024px; /* made bigger */
-      min-height: 650px; /* taller */
+      width: 1024px;
+      min-height: 650px;
       background: url("images/contact.jpg") no-repeat center center;
       background-size: cover;
       display: flex; 
@@ -104,7 +104,7 @@
       border-radius: 12px;
       box-shadow: 0 6px 15px rgba(0,0,0,0.3);
       position: relative;
-      margin-top: 120px; /* move background a bit lower below fixed nav */
+      margin-top: 120px; /* move background below fixed nav */
       transition: transform 0.4s ease;
     }
     .background:hover { transform: scale(1.01); }
@@ -124,7 +124,7 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       animation: fadeInForm 1s ease forwards;
       opacity: 0;
-      margin-top: 40px; /* move form slightly lower inside background */
+      margin-top: 40px; 
     }
     .form-container:hover { 
       transform: translateY(-2px); 
@@ -190,7 +190,6 @@
 
     /* ============================================================
        MAPS CONTAINER
-       Small embedded maps with hover effect
        ============================================================ */
     .maps-container {
       display: flex; 
@@ -215,7 +214,6 @@
 
     /* ============================================================
        BACK BUTTON
-       Returns user to homepage with fade-in
        ============================================================ */
     .back-button { 
       position: absolute; 
@@ -246,7 +244,6 @@
 
     /* ============================================================
        FOOTER
-       Simple spa-themed gradient footer
        ============================================================ */
     footer { 
       width: 100%; 
@@ -264,7 +261,6 @@
 
     /* ============================================================
        RESPONSIVE DESIGN
-       Adjust layout for smaller devices
        ============================================================ */
     @media (max-width:768px) {
       .background { width: 95%; padding: 2rem; }
@@ -291,7 +287,7 @@
             <li><a href="services.html">Services</a></li>
             <li><a href="enquiry.html">Enquiry</a></li>
             <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -307,7 +303,6 @@
     <div class="form-container">
       <h2>Send us a message</h2>
       <form id="contactForm">
-        <!-- Basic Input Fields -->
         <label>First Name*</label>
         <input type="text" id="firstName" required>
 
@@ -320,7 +315,6 @@
         <label>Phone*</label>
         <input type="tel" id="phone" required pattern="[0-9]{10}" placeholder="e.g., 0123456789">
 
-        <!-- Country Dropdown -->
         <label>Country*</label>
         <select id="country" required>
           <option value="">-- Select Country --</option>
@@ -335,15 +329,13 @@
           <option value="Other">Other</option>
         </select>
 
-        <!-- Date Picker -->
         <label>Preferred Date*</label>
         <input type="date" id="date" required>
 
         <label>Message*</label>
         <textarea id="message" required></textarea>
 
-        <!-- Submit Button -->
-        <button type="submit">Submit</button>
+        <button type="submit">Send Message</button>
         <div id="formMessage" style="margin-top:10px;color:#00796b;font-weight:bold;"></div>
       </form>
     </div>
@@ -373,16 +365,18 @@
   </footer>
 
   <!-- ============================================================
-       JAVASCRIPT FORM HANDLING
+       JAVASCRIPT FORM HANDLING + EMAIL INTEGRATION
        ============================================================ -->
   <script>
     const contactForm = document.getElementById('contactForm');
     const formMessage = document.getElementById('formMessage');
 
     contactForm.addEventListener('submit', function(e) {
-      e.preventDefault(); // Prevent default page refresh
+      e.preventDefault(); // Prevent page reload
 
-      // Gather form data
+      // ============================================================
+      // GATHER FORM DATA
+      // ============================================================
       const formData = {
         firstName: document.getElementById('firstName').value.trim(),
         lastName: document.getElementById('lastName').value.trim(),
@@ -393,7 +387,9 @@
         message: document.getElementById('message').value.trim()
       };
 
-      // Simple validation
+      // ============================================================
+      // FORM VALIDATION
+      // ============================================================
       let errors = [];
       if(formData.firstName.length < 2) errors.push("First name must be at least 2 characters.");
       if(formData.lastName.length < 2) errors.push("Last name must be at least 2 characters.");
@@ -403,17 +399,36 @@
       if(!formData.date) errors.push("Please select a date.");
       if(formData.message.length < 5) errors.push("Message must be at least 5 characters.");
 
-      // Display errors or success message
+      // Display errors if validation fails
       if(errors.length > 0) {
         formMessage.style.color = "red";
         formMessage.textContent = errors.join(" | ");
         return;
       }
 
-      // Simulate successful submission
+      // ============================================================
+      // PREPARE EMAIL USING MAILTO
+      // ============================================================
+      const subject = encodeURIComponent(`New Contact Form Submission from ${formData.firstName} ${formData.lastName}`);
+      const body = encodeURIComponent(
+        `First Name: ${formData.firstName}\n` +
+        `Last Name: ${formData.lastName}\n` +
+        `Email: ${formData.email}\n` +
+        `Phone: ${formData.phone}\n` +
+        `Country: ${formData.country}\n` +
+        `Preferred Date: ${formData.date}\n` +
+        `Message: ${formData.message}`
+      );
+
+      // Open default email client
+      const mailtoLink = `mailto:info@oceanbreezespa.com?subject=${subject}&body=${body}`;
+      window.location.href = mailtoLink;
+
+      // Show confirmation on page
       formMessage.style.color = "#00796b";
-      formMessage.textContent = `Thank you ${formData.firstName}! Your message has been submitted successfully.`;
-      alert(`Thank you ${formData.firstName}! Your message has been submitted successfully.`);
+      formMessage.textContent = `Thank you ${formData.firstName}! Your email client should open now.`;
+
+      // Reset form
       contactForm.reset();
     });
   </script>
