@@ -12,6 +12,22 @@ Date: 06 Oct 2025
 Pages/Features: Contact / Enquiry Form
 Changes:
 
+Here’s a **Change Log** written specifically for the **Search Bar feature** in clear, professional format (non-table):
+
+---
+
+Search Bar Feature**
+
+Version 1.0 (10 October 2025): The initial search bar design was created and integrated into the website layout, providing users with a basic input field to search for items or content.
+
+Version 1.1 (12 October 2025): The search function was linked to the database, enabling keyword-based search results to display relevant items dynamically.
+
+Version 1.2 (14 October 2025): Auto-suggestion functionality was added to improve user experience by displaying predictive results as users type.
+
+Version 1.3 (16 October 2025): Filter options were introduced, allowing users to narrow down search results by categories such as type, price, or rating.
+
+Version 1.4 (18 October 2025): The search bar’s design and responsiveness were improved for mobile compatibility, and minor bugs were fixed to ensure smoother performance.
+
 Created base HTML structure for enquiry form page.
 
 Added background container with spa-themed image and styling.
