@@ -251,3 +251,46 @@ ocean-breeze-spa/
 - Animations are CSS-driven.
 - JavaScript handles modal popups and form interactions.
 - All pages share consistent spa theme: colors, gradients, fonts, and layout.
+
+Reference List (Harvard Style)
+
+DePino, F. (2024) Spa website design – 30 must-see ideas to captivate your clients. Mediaboom.
+Available at: https://mediaboom.com/news/spa-website-design/
+
+(Accessed: 28 October 2025).
+
+WebFX. (n.d.) Responsive design checklist: Your 7-item list for better websites. WebFX.
+Available at: https://www.webfx.com/blog/web-design/responsive-design-checklist/
+
+(Accessed: 28 October 2025).
+
+Morris, T.A. (n.d.) Web design best practices checklist. Terry Morris Web Design.
+Available at: https://terrymorris.net/bestpractices/
+
+(Accessed: 28 October 2025).
+
+Adalo. (2024) Seven essential features for salon and spa websites in 2024 (and the platforms to build them). Adalo Blog.
+Available at: https://www.adalo.com/posts/seven-essential-features-for-salon-and-spa-websites-in-2024---and-the-platforms-to-build-them
+
+(Accessed: 28 October 2025).
+
+ServGrow. (n.d.) Great spa websites: Essential strategies to integrate (+ tips). ServGrow Web Solutions.
+Available at: https://www.servgrow.com/pro-websites/spa
+
+(Accessed: 28 October 2025).
+
+Webstacks. (2024) A complete responsive design checklist for 2025. Webstacks Blog.
+Available at: https://www.webstacks.com/blog/responsive-design-guide
+
+(Accessed: 28 October 2025).
+
+Net Solutions. (n.d.) 97-point mobile-friendly web design checklist. Net Solutions Insights.
+Available at: https://www.netsolutions.com/insights/mobile-friendly-web-design-checklist/
+
+(Accessed: 28 October 2025).
+
+Hotjar. (n.d.) Web design checklist: 15 tasks to create an amazing website. Hotjar Blog.
+Available at: https://www.hotjar.com/web-design/checklist/
+
+(Accessed: 28 October 2025).
+
