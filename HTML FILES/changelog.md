@@ -214,6 +214,61 @@ Minor adjustments to maps and back button positioning to fit larger background.
 
 
 
+References
+
+DePino, Frank. (2024, June 26). Spa Website Design – 30 Must-See Ideas to captivate your Clients. MediaBoom.
+https://mediaboom.com/news/spa-website-design/
+
+Discusses key elements like hero images/videos, navigation, booking systems.
+
+Useful for justifying your hero section, hover effects, and CTAs.
+
+WebFX. (n.d.). Responsive Design Checklist: Your 7-Item List for …. WebFX Blog.
+https://www.webfx.com/blog/web-design/responsive-design-checklist/
+
+Offers a practical checklist for responsive design.
+
+Great for supporting your “Fully mobile-optimized (≤768 px)” claim.
+
+Morris, Terry Ann. (n.d.). Web Design Best Practices Checklist. TerryMorris.net.
+https://terrymorris.net/bestpractices/
+
+Covers layout, navigation, color & graphics, browser compatibility.
+
+Supports your design-justification for consistent theme, hover effects, etc.
+
+Adalo. (2024, ~). Seven Essential Features For Salon and Spa Websites in 2024 (and the Platforms to Build Them).
+https://www.adalo.com/posts/seven-essential-features-for-salon-and-spa-websites-in-2024---and-the-platforms-to-build-them
+
+Specifically for spa & salon websites: emphasises branding consistency, user journey, etc.
+
+Useful for your “Interactive Modals” + “Navigation Bar” sections.
+
+ServGrow. (n.d.). Great Spa Websites: Essential Strategies to Integrate (+Tips).
+https://www.servgrow.com/pro-websites/spa
+
+Focuses on UX optimization, CTAs, navigation for spa sites.
+
+Good support for your “CTA button (BOOK)” and “Navigation Bar” interactive parts.
+
+Webstacks. (2024, ~). A Complete Responsive Design Checklist for 2025.
+https://www.webstacks.com/blog/responsive-design-guide
+
+Offers in-depth responsive design guidance: fluid grids, flexible images, breakpoints.
+
+Supports your “Responsive Design” section and can aid your implementation document.
+
+Net Solutions. (n.d.). 97 Point Mobile-Friendly Web Design Checklist.
+https://www.netsolutions.com/insights/mobile-friendly-web-design-checklist/
+
+Detailed mobile-friendly checklist.
+
+Can strengthen your argument for mobile optimisation and testing.
+
+Hotjar. (n.d.). Web Design Checklist: 15 Tasks to Create an Amazing Website.
+https://www.hotjar.com/web-design/checklist/
+
+Useful for process reference (wireframes, branding, layout) for your proposal’s methodology section.
 PART TWO -
 Ocean Breeze Spa 
 Change Log
@@ -232,12 +287,14 @@ adjustments.
 • Responsive media queries included to ensure mobile-friendliness without moving main content.
 • All changes are cosmetic only: no layout, position, or sizing adjustments except responsive 
 tweaks.
+
 Home / Hero Page (index.html)
 • Fade-in animation: body content smoothly appears on load.
 • Hero text overlay effects: text has subtle shadow for readability.
 • Hero images: middle and top images enhanced with shadow and smooth transitions.
 • Navigation: hover effects on tabs with subtle background gradient.
 • Call-to-action button (BOOK): gradient background, scale on hover, smooth transition.
+
 Enquiry Form Page (enquiry.html)
 • Background container: added box-shadow for depth and visual separation.
 • Form container: semi-transparent with shadow, smooth hover lift effect (translateY), enhanced 
@@ -246,6 +303,7 @@ focus on inputs.
 • Back button: transparent with hover glow and scale, positioned at bottom-right without moving 
 content.
 • Fade-in animation added on page load.
+
 Contact Form Page (contact.html)
 • Background container: enhanced shadow and subtle rounded corners.
 • Form container: semi-transparent with shadow, smooth hover lift.
@@ -255,6 +313,7 @@ Contact Form Page (contact.html)
 • Back button: transparent with hover scale/glow effect.
 • Footer: kept consistent with brand color, padding adjusted.
 • Fade-in animation applied on load.
+
 About Us Page (about.html)
 • Background image container: box-shadow for depth, header overlay full width.
 • Header: semi-transparent with text shadow, visually pops without changing layout.
@@ -262,11 +321,13 @@ About Us Page (about.html)
 • Back button: transparent hover effect, positioned at bottom-right.
 • Footer: consistent brand color, padding refined.
 • Fade-in animation applied.
+
 Rubric-Aligned Changes
 1. Working Through Feedback from Part 1 (Knowledge – 10 Marks)
 • Implemented feedback by refining page layouts, e.g., About Us page redesigned for readability.
 • Improved form styling (Contact & Enquiry) with updated fonts, colors, and button styles.
 • All updates recorded clearly in this changelog for transparency.
+
 2. CSS Styling for Desktop Solution
 • Created central style.css and linked to all pages.
 • Applied CSS reset and global defaults (font-family, color scheme, margins/paddings).
@@ -275,24 +336,19 @@ Rubric-Aligned Changes
 • Styled background colors, box-shadow, navigation bar, footer consistently.
 • Embedded YouTube video and Google Maps (x2) with aesthetic styling.
 • Added hover effects and :focus states for buttons and links.
+
 3. Responsive Design
 • Added media queries for desktop, tablet, and mobile screens.
 • Layout adjustments: single-column stacking on smaller screens, navigation repositioned.
 • Typography adjustments: relative units (em, rem) and font size tweaks.
 • Images scale responsively without distortion; background containers remain consistent.
+
 4. GitHub Repository
 • Commits with descriptive messages for version tracking.
 • README updated with: project overview, changelog, Harvard-style references.
 • Changelog clearly documents all edits.
 • References included in Harvard style.
-Harvard Style References
-• MDN. (n.d.). CSS Animations. Available at: https://developer.mozilla.org/enUS/docs/Web/CSS/CSS_Animations (Accessed: 18 September 2025).
-• MDN. (n.d.). CSS Transitions. Available at: https://developer.mozilla.org/enUS/docs/Web/CSS/CSS_Transitions (Accessed: 18 September 2025).
-• W3Schools. (n.d.). CSS Box Shadow. Available at: 
-https://www.w3schools.com/css/css3_shadows.asp (Accessed: 18 September 2025).
-• MDN. (n.d.). CSS Gradients. Available at: https://developer.mozilla.org/enUS/docs/Web/CSS/gradient (Accessed: 18 September 2025).
-• W3C. (n.d.). Web Content Accessibility Guidelines (WCAG). Available at: 
-https://www.w3.org/WAI/standards-guidelines/wcag/ (Accessed: 18 September 2025).
+
 
 
 
