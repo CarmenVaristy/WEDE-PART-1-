@@ -105,6 +105,25 @@ ocean-breeze-spa/
 - All pages share consistent spa theme: colors, gradients, fonts, and layout.
 
 
+REFERENCES:
+
+1. DePino, F. (2024) *Spa website design – 30 must-see ideas to captivate your clients.* Mediaboom. Available at: [https://mediaboom.com/news/spa-website-design/](https://mediaboom.com/news/spa-website-design/) (Accessed: 28 October 2025)
+
+2. WebFX. (n.d.) *Responsive design checklist: Your 7-item list for better websites.* WebFX. Available at: [https://www.webfx.com/blog/web-design/responsive-design-checklist/](https://www.webfx.com/blog/web-design/responsive-design-checklist/) (Accessed: 28 October 2025)
+
+3. Morris, T.A. (n.d.) *Web design best practices checklist.* Terry Morris Web Design. Available at: [https://terrymorris.net/bestpractices/](https://terrymorris.net/bestpractices/) (Accessed: 28 October 2025)
+
+4. Adalo. (2024) *Seven essential features for salon and spa websites in 2024 (and the platforms to build them).* Adalo Blog. Available at: [https://www.adalo.com/posts/seven-essential-features-for-salon-and-spa-websites-in-2024---and-the-platforms-to-build-them](https://www.adalo.com/posts/seven-essential-features-for-salon-and-spa-websites-in-2024---and-the-platforms-to-build-them) (Accessed: 28 October 2025)
+
+5. ServGrow. (n.d.) *Great spa websites: Essential strategies to integrate (+ tips).* ServGrow Web Solutions. Available at: [https://www.servgrow.com/pro-websites/spa](https://www.servgrow.com/pro-websites/spa) (Accessed: 28 October 2025)
+
+6. Webstacks. (2024) *A complete responsive design checklist for 2025.* Webstacks Blog. Available at: [https://www.webstacks.com/blog/responsive-design-guide](https://www.webstacks.com/blog/responsive-design-guide) (Accessed: 28 October 2025)
+
+7. Net Solutions. (n.d.) *97-point mobile-friendly web design checklist.* Net Solutions Insights. Available at: [https://www.netsolutions.com/insights/mobile-friendly-web-design-checklist/](https://www.netsolutions.com/insights/mobile-friendly-web-design-checklist/) (Accessed: 28 October 2025)
+
+8. Hotjar. (n.d.) *Web design checklist: 15 tasks to create an amazing website.* Hotjar Blog. Available at: [https://www.hotjar.com/web-design/checklist/](https://www.hotjar.com/web-design/checklist/) (Accessed: 28 October 2025)
+
+
 PART ONE -
 
 1. Introduction
@@ -279,16 +298,18 @@ contact us page :
 
 
 References (Harvard Style)
-• Mozilla Developer Network (MDN). (n.d.). HTML: HyperText Markup Language. Retrieved 25 July 2025, from 
-https://developer.mozilla.org/en-US/docs/Web/HTML
-• W3Schools. (n.d.). HTML and CSS Tutorials. Retrieved 25 July 2025, from https://www.w3schools.com
-• Google Fonts. (n.d.). Browse Fonts. Retrieved 25 July 2025, from https://fonts.google.com
-• Pexels. (n.d.). Free Spa and Wellness Images. Retrieved 25 July 2025, from https://www.pexels.com
-• Pixabay. (n.d.). Free Stock Photos and Royalty-Free Images. Retrieved 25 July 2025, from https://pixabay.com
-• OpenAI. (2025). ChatGPT – AI Writing Assistant. Retrieved 25 July 2025, from https://chat.openai.com
-• CakeStock. (n.d.). Free Images for Commercial Use. Retrieved 25 July 2025, from https://cakestock.com
-• Font Awesome. (n.d.). Free Icons and Icon Fonts for Web Design. Retrieved 25 July 2025, from 
-https://fontawesome.com
-• Canva. (n.d.). Design Inspiration and Templates. Retrieved 25 July 2025, from https://www.canva.com
-• GitHub Docs. (n.d.). GitHub Pages and Repository Guides. Retrieved 25 July 2025, from https://docs.github.com/en
-• Unsplash. (n.d.). Beautiful Free Images and Photos. Retrieved 25 July 2025, from https://unsplash.co
+1. DePino, F. (2024) *Spa website design – 30 must-see ideas to captivate your clients.* Mediaboom. Available at: [https://mediaboom.com/news/spa-website-design/](https://mediaboom.com/news/spa-website-design/) (Accessed: 28 October 2025)
+
+2. WebFX. (n.d.) *Responsive design checklist: Your 7-item list for better websites.* WebFX. Available at: [https://www.webfx.com/blog/web-design/responsive-design-checklist/](https://www.webfx.com/blog/web-design/responsive-design-checklist/) (Accessed: 28 October 2025)
+
+3. Morris, T.A. (n.d.) *Web design best practices checklist.* Terry Morris Web Design. Available at: [https://terrymorris.net/bestpractices/](https://terrymorris.net/bestpractices/) (Accessed: 28 October 2025)
+
+4. Adalo. (2024) *Seven essential features for salon and spa websites in 2024 (and the platforms to build them).* Adalo Blog. Available at: [https://www.adalo.com/posts/seven-essential-features-for-salon-and-spa-websites-in-2024---and-the-platforms-to-build-them](https://www.adalo.com/posts/seven-essential-features-for-salon-and-spa-websites-in-2024---and-the-platforms-to-build-them) (Accessed: 28 October 2025)
+
+5. ServGrow. (n.d.) *Great spa websites: Essential strategies to integrate (+ tips).* ServGrow Web Solutions. Available at: [https://www.servgrow.com/pro-websites/spa](https://www.servgrow.com/pro-websites/spa) (Accessed: 28 October 2025)
+
+6. Webstacks. (2024) *A complete responsive design checklist for 2025.* Webstacks Blog. Available at: [https://www.webstacks.com/blog/responsive-design-guide](https://www.webstacks.com/blog/responsive-design-guide) (Accessed: 28 October 2025)
+
+7. Net Solutions. (n.d.) *97-point mobile-friendly web design checklist.* Net Solutions Insights. Available at: [https://www.netsolutions.com/insights/mobile-friendly-web-design-checklist/](https://www.netsolutions.com/insights/mobile-friendly-web-design-checklist/) (Accessed: 28 October 2025)
+
+8. Hotjar. (n.d.) *Web design checklist: 15 tasks to create an amazing website.* Hotjar Blog. Available at: [https://www.hotjar.com/web-design/checklist/](https://www.hotjar.com/web-design/checklist/) (Accessed: 28 October 2025)
