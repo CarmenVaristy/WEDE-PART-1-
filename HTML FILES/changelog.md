@@ -351,6 +351,62 @@ Rubric-Aligned Changes
 
 
 
+References
+
+DePino, Frank. (2024, June 26). Spa Website Design – 30 Must-See Ideas to captivate your Clients. MediaBoom.
+https://mediaboom.com/news/spa-website-design/
+
+Discusses key elements like hero images/videos, navigation, booking systems.
+
+Useful for justifying your hero section, hover effects, and CTAs.
+
+WebFX. (n.d.). Responsive Design Checklist: Your 7-Item List for …. WebFX Blog.
+https://www.webfx.com/blog/web-design/responsive-design-checklist/
+
+Offers a practical checklist for responsive design.
+
+Great for supporting your “Fully mobile-optimized (≤768 px)” claim.
+
+Morris, Terry Ann. (n.d.). Web Design Best Practices Checklist. TerryMorris.net.
+https://terrymorris.net/bestpractices/
+
+Covers layout, navigation, color & graphics, browser compatibility.
+
+Supports your design-justification for consistent theme, hover effects, etc.
+
+Adalo. (2024, ~). Seven Essential Features For Salon and Spa Websites in 2024 (and the Platforms to Build Them).
+https://www.adalo.com/posts/seven-essential-features-for-salon-and-spa-websites-in-2024---and-the-platforms-to-build-them
+
+Specifically for spa & salon websites: emphasises branding consistency, user journey, etc.
+
+Useful for your “Interactive Modals” + “Navigation Bar” sections.
+
+ServGrow. (n.d.). Great Spa Websites: Essential Strategies to Integrate (+Tips).
+https://www.servgrow.com/pro-websites/spa
+
+Focuses on UX optimization, CTAs, navigation for spa sites.
+
+Good support for your “CTA button (BOOK)” and “Navigation Bar” interactive parts.
+
+Webstacks. (2024, ~). A Complete Responsive Design Checklist for 2025.
+https://www.webstacks.com/blog/responsive-design-guide
+
+Offers in-depth responsive design guidance: fluid grids, flexible images, breakpoints.
+
+Supports your “Responsive Design” section and can aid your implementation document.
+
+Net Solutions. (n.d.). 97 Point Mobile-Friendly Web Design Checklist.
+https://www.netsolutions.com/insights/mobile-friendly-web-design-checklist/
+
+Detailed mobile-friendly checklist.
+
+Can strengthen your argument for mobile optimisation and testing.
+
+Hotjar. (n.d.). Web Design Checklist: 15 Tasks to Create an Amazing Website.
+https://www.hotjar.com/web-design/checklist/
+
+Useful for process reference (wireframes, branding, layout) for your proposal’s methodology section.
+
 
 
 
